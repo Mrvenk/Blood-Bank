@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>BLOOD BANK</title>
+    <link rel="icon" href="images/ICON2.png">
+    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+<body>
+    <div style="background-image: url(images/BG1.jpg); height: 570px; width:1210px; right: 30px; position: absolute; top: 10px;">
+      <span style="font-size:30px;cursor:pointer" onmouseover="openNav()">&#9776;</span>
+
+  
+      <div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
+          <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+          <a href="">HOME</a>
+          <a href="">DONATE</a>
+          <a href="">BLOOD STOCK</a>
+          <a href="">ABOUT</a>
+      </div>
+   
+      <script>
+        
+          function openNav() {
+              document.getElementById("mySidenav").style.width = "100px";
+              document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+          }
+  
+         
+          function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementsByClassName("content")[0].style.marginLeft= "0";
+          }
+      </script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div style="background-color: rgb(236, 106, 127); height: 415px; width: 384px; position: absolute; top: 40px; right: 30px; border-radius: 1cm;">
+
+            <form action="signup.php" method="post">
+                <div class="container">
+                  <h1 style="text-align: center;">Register</h1>
+                 
+                 
+                  <br>
+              
+                  <label for="name"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="username" id="Username" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+              
+                  <label for="psw-repeat"><b>Repeat Password</b></label>
+                  <input type="password" placeholder="Repeat Password" name="password-repeat" id="psw-repeat" required>
+                  <hr style="width: 100%;">
+                    <br><br>
+                 
+                  <button type="submit" class="registerbtn" onforminput="">Register</button>
+                </div>
+              
+                <div class=" signin"><br>
+                  <p>Already have an account? <a href="LOGIN.html">Sign in</a>.</p>
+                </div>
+              </form>
+              <style>
+                * {box-sizing: border-box}
+        
+       
+        .container {
+          padding: 16px;
+        }
+        
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+        }
+        
+        input[type=text]:focus, input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+        
+      
+        hr {
+          border: 1px solid #f1f1f1;
+          margin-bottom: -50px;
+        }
+        
+      
+        .registerbtn {
+          background-color:#f1f1f1;
+          color:crimson;
+          padding: 10px 20px;
+          margin: 20px 80px;
+          border: none;
+          cursor: pointer;
+          width: 50%;
+          border-radius: 100px;
+          
+
+          
+          
+        }
+      
+        
+      
+        a {
+          color: dodgerblue;
+        }
+        
+       
+        .signin {
+          background-color: #f1f1f1;
+          text-align:center;
+          width: 100%;
+          height: 50px;
+          position: absolute;
+          top: 420px;
+          border-radius: 5px;
+          right: 5px;
+        }
+              </style>
+        
+
+
+        </div>
+    </div>
+</body>
+</html>

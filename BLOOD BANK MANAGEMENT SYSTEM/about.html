@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Blood Bank Management System</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <span style="font-size:30px;cursor:pointer  " onclick="openNav()">&#9776;</span>
+
+  
+    <div id="mySidenav" class="sidenav">
+        <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+        <a href="home.html">HOME</a>
+        <a href="Doante.html">DONATE</a>
+        <a href="Blood Stock.html">BLOOD STOCK</a>
+        <a href="about.html">ABOUT</a>
+    </div>
+ 
+    <script>
+      
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100px";
+            document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+        }
+
+       
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementsByClassName("content")[0].style.marginLeft= "0";
+        }
+    </script>
+    
+
+    <header>
+        <h1>About Blood Bank Management System</h1>
+    </header>
+    <div class="container">
+        <p>
+            The Blood Bank Management System is designed to efficiently manage blood donations, blood inventory, and donor information. This system helps blood banks streamline their operations and ensure a steady supply of blood to those in need.
+        </p>
+        <p>
+            Features of the Blood Bank Management System:
+        </p>
+        <ul>
+            <li>Donor registration and management</li>
+            <li>Blood inventory tracking and management</li>
+            <li>Request and distribution of blood units</li>
+            <li>Donor eligibility screening</li>
+            <li>Appointment scheduling for donors</li>
+            <li>Reporting and analytics</li>
+        </ul>
+    </div>
+    <div class="back-link">
+        <a href="home.html">Back to Home</a>
+    </div>
+</body>
+</html>

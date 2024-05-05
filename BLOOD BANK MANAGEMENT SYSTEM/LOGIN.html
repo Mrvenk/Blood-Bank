@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOD BANK</title>
+    <link rel="icon" href="images/ICON2.png">
+    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <style>
+        .signy{
+            color: dodgerblue;
+        }
+    </style>
+
+   <div style="background-image: url(images/BG1.jpg); height: 569px; width:1210px; right: 30px; position: absolute; top: 10px;">
+    <span style="font-size:30px;cursor:pointer" onmouseover="openNav()">&#9776;</span>
+
+  
+    <div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
+        <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+        <a href="">HOME</a>
+        <a href="">DONATE</a>
+        <a href="">BLOOD STOCK</a>
+        <a href="">ABOUT</a>
+    </div>
+ 
+    <script>
+      
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100px";
+            document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+        }
+
+       
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementsByClassName("content")[0].style.marginLeft= "0";
+        }
+    </script>
+    
+
+   
+   <div style="background-color: rgb(236, 106, 127); height: 250px; width: 300px; position: absolute; top: 80px; right: 40px; border-radius: 1cm;">
+       
+    
+        
+    <form action="login.php" method="post" ><br>
+                <h1 style="text-align: center;">Login</h1>
+        <center>
+            <br><br>
+            <label for="USER NAME">USER NAME </label>
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <br> <br>
+        <label for="PASSWORD">PASSWORD</label>
+       &nbsp<input type="text" name="password" placeholder="Enter Password" required>
+        <BR><br>
+        <hr>
+       
+       <INput  type="submit" class="ani" style="padding: 2.5%;background-color:#f1f1f1;   position: absolute; top: 200px; right: 170px;  " ></INput> 
+      
+       
+       
+        <INput  type="reset" class="ani" style="padding: 2.5%; background-color:#f1f1f1; position: absolute; top: 200px; right: 50px;  "></INput>
+    </center>
+    </form>
+    <div class="container signin"><br>
+        <p>Don't have an account? <a href="signup.html" class="signy">Sign up</a>.</p>
+      </div>
+</div>
+
+
+
+
+
+
+</div>
+
+    
+   
+</body>
+</html>

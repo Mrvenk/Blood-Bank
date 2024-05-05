@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Units</title>
+   
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: #3498db;
+}
+
+#blood-group-select {
+    margin-bottom: 20px;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:pink;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+
+.sidenav a {
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color:black;
+    display: block;
+    transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+    background-color:beige;
+}
+
+
+    </style>
+
+
+
+<span style="font-size:30px;cursor:pointer;  position: absolute; top: 0%; right: 1250px; " onmouseover="openNav()">&#9776;</span>
+
+  
+<div id="mySidenav" class="sidenav"  onmouseleave="closeNav()">
+    <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+    <a href="homey.html">HOME</a>
+    <a href="Donate.html">DONATE</a>
+    <a href="Blood Stock.html">BLOOD STOCK</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<script>
+  
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100px";
+        document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+    }
+
+   
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementsByClassName("content")[0].style.marginLeft= "0";
+    }
+</script>
+<style>
+    select{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+        label{
+            font-size: x-large;
+        }
+        body{
+            background-color: bisque;
+        }
+        input{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+        button{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+        #result {
+width: 200px;
+height: 30px;
+background-color: pink;
+color:black;
+        }
+</style>
+
+    <h1>Blood Stock Units</h1>
+    
+    <div id="blood-group-select">
+        <label for="blood-group">Select a Blood Group:</label>
+        <select id="blood-group">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+        <button id="search-button">Search</button>
+    </div>
+    
+    
+<center>
+    <div id="result" >
+            
+    </div></center>
+
+    
+
+    <script >
+        document.addEventListener("DOMContentLoaded", () => {
+    const bloodBankData = {
+        "A+": 25,
+        "A-": 10,
+        "B+": 30,
+        "B-": 15,
+        "AB+": 20,
+        "AB-": 5,
+        "O+": 35,
+        "O-": 8,
+    };
+
+    const bloodGroupSelect = document.getElementById("blood-group");
+    const searchButton = document.getElementById("search-button");
+    const resultDiv = document.getElementById("result");
+
+    function displayBloodUnits(bloodGroup) {
+        const units = bloodBankData[bloodGroup] || 0;
+        resultDiv.textContent = `Collected units for ${bloodGroup}: ${units}`;
+    }
+
+    searchButton.addEventListener("click", () => {
+        const selectedBloodGroup = bloodGroupSelect.value;
+        displayBloodUnits(selectedBloodGroup);
+    });
+
+    
+    const defaultBloodGroup = bloodGroupSelect.value;
+    displayBloodUnits(defaultBloodGroup);
+});
+
+    </script>
+</body>
+</html>

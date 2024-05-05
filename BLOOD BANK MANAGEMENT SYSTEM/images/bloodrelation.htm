@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>e-RaktKosh:Centralized Blood Bank Management System</title>
+  <!-- "CDN's" -->
+
+
+  <!-- "CDN CSS" -->
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/cssF/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <meta name="description"
+    content="e-Rakt Kosh is an initiative to connect, digitize and streamline the workflow of blood banks across the nation, you can get nearby camps, bloodbanks, blood stock availability and search for the same across India.">
+  <meta name="keywords"
+    content="eRaktkosh,online blood bank India,nearby camps,nearby bloodbanks,stock availibility in blood banks">
+
+
+  <!-- "CDN CSS ENDS" -->
+  <link href="../../hisglobal/bbpublic/assets/elements/css/bootstrap.validated.css" rel="stylesheet">
+  <!--    <link href="../../hisglobal/bbpublic/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
+  <link href="assets/css/combined-cleaned.css" rel="stylesheet">
+
+
+  <link rel='manifest' href='../../hisglobal/bbpublic/assets/elements/json/manifest.json'>
+  <link href="assets/css/main-cleaned.css" rel="stylesheet">
+  <meta name='mobile-web-app-capable' content='yes'>
+  <meta name='apple-mobile-web-app-capable' content='yes'>
+  <meta name='application-name' content='e-RaktKosh'>
+  <link rel='icon' href='assets/erakt_icon.png'>
+  <meta name='msapplication-TileImage' content='assets/erakt_icon.png'>
+  <meta name='msapplication-TileColor' content='#ff0000'>
+  <link rel="apple-touch-startup-image" href="assets/erakt_icon.png">
+  <meta name="apple-mobile-web-app-title" content="e-RaktKosh">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name='apple-mobile-web-app-status-bar-style' content='red'>
+  <link rel='apple-touch-icon' href='assets/erakt_icon.png'>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name='theme-color' content='#ff0000'>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="assets/css/bbpubliccustom.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/bbpublic.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../hisglobal/bbpublic/assets/newsticker/styles/ticker-style.css" rel="stylesheet" type="text/css" />
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script> -->
+  <script src="https://kit.fontawesome.com/9e17df0ea8.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="raktbot/static/chatbot_style.css">
+<!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name='theme-color' content='#ff0000'>
+
+    <!-- ThirdParty CSS CDNs -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.12.1/b-2.2.3/sl-1.4.0/datatables.min.css" />
+
+
+
+    <!-- Local CSS -->
+    <style>
+        .row {
+            margin: auto !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .section-title {
+            margin: 0 0 30px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 25px !important;
+            font-family: oswald, Montserrat, sans-serif !important;
+            padding-top: 40px;
+        }
+
+        .animate-text {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #bf4141 0%,
+                    #59060e 29%,
+                    #d83c3c 67%,
+                    #5e0202 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 6s alternate-reverse infinite;
+        }
+
+        #counter {
+            text-align: center !important;
+            padding: 5px;
+            color: #fff;
+            background: rgb(1, 65, 127);
+            background: radial-gradient(circle, rgba(1, 65, 127, 1) 0%, rgba(1, 48, 103, 1) 16%, rgba(0, 17, 60, 1) 57%, rgba(0, 17, 60, 1) 100%);
+            /* background: linear-gradient(45deg, #ffffffee 30%, #fd000055 150%),
+            linear-gradient(145deg, #ffffffee 30%, #fd000055 150%); */
+            background: url('statsAssets/images/counter-bg.png');
+            background-size: cover;
+        }
+
+        #counter .counter-title {
+            display: block;
+            text-align: center;
+            font-size: 25px !important;
+            font-family: oswald, Montserrat, sans-serif !important;
+        }
+
+        #counter .counter-title h2 {
+            font-size: 36px;
+            font-family: inherit !important;
+
+            justify-content: center;
+            /* font-weight: 800;
+            color: #fff; */
+        }
+
+        #counter .counter-title .counter-date {
+
+            justify-content: center;
+        }
+
+        #counter .counter-title h3 {
+            font-family: inherit !important;
+            color: #9A1819;
+            text-transform: none !important;
+            justify-content: center;
+        }
+
+        #counter .counter-row {
+            display: flex;
+            justify-content: center;
+            width: 75%;
+            margin: auto;
+        }
+
+        #counter .counter-container {
+            width: 20vw;
+            height: 130px;
+            background-color: #ffffff88;
+            /* margin: 0 2.5vw 0; */
+            margin: 20px auto;
+            border-radius: 20px;
+            border: 1px #00000099 solid;
+        }
+
+        #counter .count-box {
+            font-size: 30px;
+            font-weight: 600;
+/*            animation: strobe 2s linear infinite;*/
+            color: #fff;
+            padding-top: 30px;
+            font-family: oswald, Montserrat, sans-serif !important;
+        }
+
+        #counter .counter-container h3 {
+            font-size: 25px;
+            color: #fff;
+            font-family: oswald, Montserrat, sans-serif !important;
+        }
+
+        #counter .counter-container h3 sup {
+            cursor: pointer;
+        }
+
+        #counter #statsRow {
+            color: #9A1819;
+            justify-content: center;
+        }
+
+        .chart-section .state-chart-div {
+            position: relative;
+            margin: auto;
+            height: 80vh;
+            width: 80vw;
+        }
+
+        .table-section {
+            background-color: #66666611;
+        }
+
+        .table-section .stats-table-div {
+            position: relative;
+            margin: auto;
+            width: 80vw;
+        }
+
+        @keyframes textclip {
+            from {
+                background-position: 0% right;
+            }
+
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes strobe {
+
+            0%,
+            100% {
+                scale: 1.1;
+            }
+
+            50% {
+                scale: .8;
+            }
+        }
+
+        @media (max-width: 1600px) {
+            #counter .count-box {
+                font-size: 26px;
+            }
+
+            #counter .counter-container h3 {
+                font-size: 22px;
+            }
+        }
+
+
+        @media (max-width: 1100px) {
+            #counter .count-box {
+                font-size: 18px;
+            }
+
+            #counter .counter-container h3 {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            #counter {
+                background-size: cover;
+            }
+
+            #counter .counter-row {
+                flex-direction: column;
+            }
+
+            #counter .counter-container {
+                width: 60vw;
+            }
+
+            #counter .count-box {
+                font-size: 24px;
+            }
+
+            #counter .counter-container h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+
+  <style>
+    #mylink:hover {
+      background-color: yellow;
+      color: black;
+    }
+
+    #mylink2:hover {
+      background-color: yellow;
+    }
+  </style>
+  <style>
+    .sliderFeatures {
+      background-image: url("assets/blood-home-logo-bg.png")
+    }
+
+    .logo1 {
+      display: inline;
+    }
+  </style>
+
+  <style>
+    #ac-wrapper {
+      position: fixed;
+      top: 452px;
+      right: 10px;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(255,255,255,.6); */
+      z-index: 1001;
+    }
+
+    #popup {
+      width: 305px;
+      height: 118px;
+      background: #fd0000;
+      /* border: 5px solid #000; */
+      border-radius: 25px;
+      -moz-border-radius: 25px;
+      -webkit-border-radius: 25px;
+      box-shadow: #ffffff 0px 0px 3px 3px;
+      -moz-box-shadow: #ffffff 0px 0px 3px 3px;
+      /* -webkit-box-shadow: #64686e 0px 0px 3px 3px; */
+      position: relative;
+      top: 150px;
+      /* left: 375px; */
+    }
+
+    .time {
+      cursor: pointer;
+      margin-right: 12px;
+      color: #ffff;
+      font-size: xx-large;
+    }
+  </style>
+
+  <!-- Code started by Prabhu 2nd Sept 2022 -->
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Lato);
+
+
+    .mbdd-header h3 {
+      font-family: Lato;
+      margin-top: 50px !important;
+      font-size: 62px !important;
+      font-weight: 800;
+      text-transform: uppercase;
+      background-image: linear-gradient(-225deg,
+          #faa3a3 0%,
+          #ae2532 29%,
+          #faa3a3 67%,
+          #bd1515 100%);
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2s alternate-reverse infinite;
+    }
+
+    @keyframes textclip {
+      from {
+        background-position: 0% right;
+      }
+
+      to {
+        background-position: 200% center;
+      }
+    }
+
+
+    .mbdd-content-row {
+      padding: 50px 0 0;
+    }
+
+    .mbdd-content-row h5 {
+      font-size: 38px;
+      text-align: right;
+      height: 150px;
+      margin-top: 27px;
+    }
+
+    .mbdd-content-row h5 b {
+      font-size: 60px;
+      font-weight: 700;
+
+    }
+
+    .mbdd-content-row .mbdd-slogan {
+      width: 600px;
+      height: 150px;
+      background-color: #ae2532;
+      display: flex;
+      border: 3px solid #2e2532;
+      border-radius: 10px;
+    }
+
+    .mbdd-content-row .mbdd-slogan h6 {
+      font-family: Lato;
+      align-items: center;
+      vertical-align: middle;
+      font-size: 35px;
+      color: #f4f4f4 !important;
+      margin: auto;
+    }
+
+    .mbdd-credits {
+      margin-bottom: 50px;
+    }
+
+    .mbdd-credits h6 {
+      font-family: Lato;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .mbdd-credits img {
+      height: 120px;
+    }
+
+    #mbdd-modal .modal-content {
+      width: 70vw;
+    }
+
+    #mbdd-modal .modal-dialog {
+      width: auto;
+      margin: 10vh 15vw;
+    }
+
+    @media (max-width: 1600px) {
+      .mbdd-header h3 {
+        font-size: 50px !important;
+      }
+
+      .mbdd-content-row h5 {
+        font-size: 30px !important;
+      }
+
+      .mbdd-content-row h5 b {
+        font-size: 55px !important;
+      }
+
+      .mbdd-content-row .mbdd-slogan {
+        width: 500px;
+      }
+
+      .mbdd-content-row .mbdd-slogan h6 {
+        font-size: 28px !important;
+      }
+
+      .mbdd-credits h6 {
+        font-size: 18px !important;
+      }
+
+      .mbdd-credits img {
+        height: 60px !important;
+      }
+    }
+  </style>
+  <style>
+	  .main-header .logo {
+	  	transform:scale(.9);
+	  }
+    .fixed-top-header .logo {
+      transform: scale(.6) !important;
+      margin-top: -17px !important;
+      height: auto !important;
+    }
+  </style>
+  <!--     Code ended by Prabhu  -->
+
+
+  <script>
+    var langg = "0";
+    var lang = "0";
+
+  </script>
+
+</head>
+
+<body>
+
+
+
+  <div
+    style="position: fixed;top: 0;left: 0;width: 100%;height: 1px;background: #cb2d3e;background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);background: linear-gradient(to right, #ef473a, #cb2d3e);">
+    <br>
+  </div>
+  <ul class="notifications"></ul>
+  <div class="preloader"></div>
+  <!-- Main Header -->
+  <div style="height:10%" class="pre-header  toggle1">
+    <div class="auto-container clearfix">
+
+      <div class="header-social">
+
+        <div class="social-links">
+         <!--TARUN <a href="hindihomepage.html" class="hvr-bounce-to-top " style='width: 55px;'
+            title="hindihomepage">??????&nbsp;</a>-->
+
+          <a style="color: #be232b; background: lightgrey;" class="hvr-bounce-to-top" href="#" title="Togglebackground"
+            id="dark">A </a>
+
+          <a style="color: white; background: #be232b;" class="hvr-bounce-to-top make_greater" href="#">A+</a>
+          <a style="color: white; background: #be232b;" class="hvr-bounce-to-top" id="reset" href="#">A</a>
+          <a style="color: white; background: #be232b;" class="hvr-bounce-to-top make_smaller" href="#">A-</a>
+
+          <a href="/BLDAHIMS/bloodbank/portalScreenReaders.cnt" class="hvr-bounce-to-top spstiny"
+            alt="Screen Readers"><span class="fa fa-sps-f">Screen Readers</span></a>
+          <!--   <a href="#" class="hvr-bounce-to-top"><span class="fa fa-facebook-f" title="Facebook"></span></a>
+                     <a href="#" class="hvr-bounce-to-top"><span class="fa fa-twitter" title="Twitter"></span></a>
+                     <a href="#" class="hvr-bounce-to-top"><span class="fa fa-google-plus" title="Google Plus"></span></a>       -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <header class="main-header">
+    <div class="auto-container clearfix">
+      <!--Logo-->
+      <div class="logo"><a href="bbpublicindex.html"><img src="../../hisglobal/bbpublic/images/Rakt5.png"
+            alt="eRaktkosh" title="eRaktkosh"></a></div>&nbsp;
+
+      <!--Main Menu-->
+      <nav class="main-menu">
+        <div class="navbar-header">
+          <!-- Toggle Button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse clearfix">
+
+          <ul style="height:10%" class="navigation">
+            <li class="dropdown current "><a href="#" title="About us">About Us</a>
+              <ul class="submenu">
+                <li><a title="Home" href="bbpublicindex.html">Home</a></li>
+                <li><a title="About eRaktkosh" href="/BLDAHIMS/bloodbank/about.cnt">About eRaktKosh</a></li>
+                <li><a title="All Notifications" href="/BLDAHIMS/bloodbank/notification.cnt">Notifications</a></li>
+                <li><a title="Eraktkosh FAQs" href="/BLDAHIMS/bloodbank/eraktkoshfaq.cnt">Eraktkosh FAQs</a></li>
+                <li><a href="/BLDAHIMS/bloodbank/transactions/bbpublicindexGallery.html" title="gallery">Gallery</a>
+                </li>
+                <li><a href="/BLDAHIMS/bloodbank/transactions/video.html" title="Video gallery">Video Gallery</a></li>
+                <li><a href="/BLDAHIMS/bloodbank/contact.cnt" title="Contact No">Contact Us</a></li>
+                <li><a href="/BLDAHIMS/bloodbank/downloadMobile.cnt" title="Mobile Apps">Mobile Apps</a></li>
+              </ul>
+            </li>
+            <li class="dropdown "><a href="#" title="Downloads">Looking for Blood</a>
+              <ul class="submenu">
+                <li><a href="/BLDAHIMS/bloodbank/stockAvailability.cnt" title="Blood Availability">Blood
+                    Availability</a></li>
+                <li><a href="/BLDAHIMS/bloodbank/nearbyBBRed.cnt" title="Nearby Blood Bank">Blood Bank Directory</a>
+                </li>
+                <li><a href="/BLDAHIMS/bloodbank/portalThalassemiaLogin.cnt"
+                    title="Thalassemia Blood Request">Thalassemia Request</a></li>
+
+
+
+
+              </ul>
+            </li>
+
+            <li class="dropdown"><a title="Services" href="#">Want to Donate Blood</a>
+              <ul class="submenu">
+                <li><a href="/BLDAHIMS/bloodbank/campSchedule.cnt" title="Camp Schedule">Blood Donation Camps</a></li>
+                <!--      <li><a href="/BLDAHIMS/bloodbank/onlineDonationRequest.cnt" title="Online Donation Request">Appointment for Blood Bank</a></li>
+ -->
+                <li><a href="/BLDAHIMS/bloodbank/portalDonorLogin.cnt" title="My Donations">Donor Login</a></li>
+<!-- Added by Prerna on 11-09-2022 -->
+     <li style="display: block;"><a href="/BLDAHIMS/bloodbank/portalCampLogin.cnt" title="My Camps">Camp Admin Login</a></li>
+     <!-- Ended -->
+                <li style="display: none;"><a href="/BLDAHIMS/bloodbank/voluntryDonorsGroupRegistration.cnt"
+                    title="Voluntary Donor Group">Voluntary Donor Group</a></li>
+                <li><a title="About Blood Donation" href="/BLDAHIMS/bloodbank/donateblood.cnt">About Blood Donation</a>
+                </li>
+                <li><a href="/BLDAHIMS/bloodbank/onlineCampRequestNewBB.cnt" title="Register VBD Camp"
+                    href="/BLDAHIMS/bloodbank/donateblood.cnt">Register VBD Camp</a></li>
+
+
+
+              </ul>
+            </li>
+
+
+            <li class="dropdown "><a style="" href="#"><b>Blood Bank Login</b></a>
+              <ul class="submenu">
+                <li><a href="/eRaktKosh/hissso/loginLogin" target="_blank" title="eRaktkosh Login">eRaktkosh Login</a>
+                </li>
+                <li><a href="/BLDAHIMS/bloodbank/bbOnboard.cnt?hmode=GETONBOARDFORMESSENTIAL"
+                    title="Add Your Bloodbank">Add Your Bloodbank</a></li>
+              </ul>
+            </li>
+
+
+
+          </ul>
+        </div>
+      </nav>
+      <!--Main Menu End-->
+    </div>
+  </header>
+  <!--End Main Header -->
+  <div class="page-wrapper">
+    <!-- Preloader -->
+
+    <div id="header"></div>
+    <!-- Main Slider -->
+    <div class='container1'>
+      <div id="myCarousel" class="carousel slide ">
+
+        <div class="carousel-inner">
+          <div class="item one active" data-interval="1000">
+
+           <!--  <img src="assets/MBD_banner.png" data-src="assets/MBD_banner.png"
+              data-src-webp="assets/webp/MBD_banner.webp" alt="MBD_banner.png"> -->
+               
+             <!--   <img src="assets/updated_NewYear2023.png" data-src="assets/updated_NewYear2023.png"
+              data-src-webp="assets/webp/updated_NewYear2023.webp" alt="updated_NewYear2023.png">
+             --> 
+                 <img src="assets/updated_NewYear2022.png" data-src="assets/updated_NewYear2022.png"
+              data-src-webp="assets/webp/updated_NewYear2022.webp" alt="updated_NewYear2022.png">
+          
+            <div class="container ">
+              <div class="carousel-caption">
+
+
+                <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+                  <h1 class="toggle2 visible-xs"><!--eRaktkosh Mobile Application--></h1>
+
+                </div>
+
+                <div class="carDescText"><!-- <i onclick="window.location='/BLDAHIMS/bloodbank/downloadMobile.cnt'"
+                    class='fa hvr-icon-wobble-horizontal fa-arrow-circle-o-right fa-2x' aria-hidden="true"
+                    style='cursor:pointer'></i> --></div>
+
+
+              </div>
+            </div>
+          </div>
+
+			 <div class="item two " data-interval="1000">
+			   <img src="assets/ONE_NATION_2500_600.png" data-src="assets/ONE_NATION_2500_600.png"
+              data-src-webp="assets/webp/ONE_NATION_2500_600.webp" alt="ONE_NATION_2500_600.png">
+           
+          
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+         <!--  <div class="item three " data-interval="1000">
+               <img src="assets/updated_NewYear2022.png" data-src="assets/updated_NewYear2022.png"
+              data-src-webp="assets/webp/updated_NewYear2022.webp" alt="updated_NewYear2022.png">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+
+                </div>
+              </div>
+            </div>
+
+          </div> -->
+         <!--  <div class="item three " data-interval="1000">
+            <img src="assets/ONE_NATION_2500_600.png" data-src="assets/ONE_NATION_2500_600.png"
+              data-src-webp="assets/webp/ONE_NATION_2500_600.webp" alt="ONE_NATION_2500_600.png">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="item six " data-interval="1000">
+            <img src="assets/Blood_EHealthID_2500_600.png" data-src="assets/Blood_EHealthID_2500_600.png"
+              data-src-webp="assets/webp/Blood_EHealthID_2500_600.webp" alt="Blood_EHealthID_2500_600.png">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+
+                </div>
+                <div class="carDescText"><i onclick="window.location='/BLDAHIMS/bloodbank/portalDonorLogin.cnt'"
+                    class='fa hvr-icon-wobble-horizontal fa-arrow-circle-o-right fa-2x' aria-hidden="true"
+                    style='cursor:pointer;font-size: large;'>Login & Generate</i></div>
+              </div>
+            </div>
+
+          </div>
+ -->
+
+          <!--   <div class="item seven " data-interval="1000 ">
+   
+           
+          <img src="assets/thalaposternew.jpg" data-src="assets/thalaposternew.jpg" data-src-webp="assets/webp/thalaposternew.webp" alt="thalaposternew.jpg">
+          <div class="container ">
+            <div class="carousel-caption">
+
+             
+              <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+                  
+               </div>                            
+               <div class="carDescText"><i class="fa fa-arrow-circle-o-right fa-2x hvr-icon-wobble-horizontal" style='cursor:pointer' onclick="window.location='/BLDAHIMS/bloodbank/portalThalassemiaLogin.cnt'">  </i> </div> 
+        
+             
+            </div>
+          </div>
+        </div> -->
+        </div>
+
+
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+            class="fa fa-chevron-left fa-2x"></span></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span
+            class="fa fa-chevron-right fa-2x"></span></a>
+      </div>
+
+
+<!-- mbbd2 -->
+ <section id="counter">
+        <div class="counter-title row text-center">
+            <!-- <h2 class="animate-text row">Total Blood Donation Statistics</h2> -->
+        </div>
+        <div class="counter-row row" style="width:55%">  
+            <div class="counter-container" style="background-color: #53884f;  display: block;">  <!-- mbbd2 -->
+                <div class="count-box">
+                    <span id="approvedCamps"></span>
+                </div>
+                <div>
+                    <h3>Approved Camps <sup title="Camps registered for Sewa Pakhwara">&#9432;</sup></h3>
+
+                </div>
+            </div>
+            <!-- <div class="counter-container1" style="background-color:  #53884f;  ">
+                <div class="count-box">
+                    <span id="registeredDonors">796</span>
+                </div>
+                <div>
+                    <h3>Donors Registered <sup title="Donors who volunatry registered in Sekha Pakhwara">&#9432;</sup></h3>
+                </div>
+            </div> -->
+           <div class="counter-container" style="background-color:  #107ecb;" >
+                <div class="count-box">
+                    <span id="donorsDonated"></span>
+                </div>
+                <div>
+                    <h3>Blood Units Collected<sup
+                            title="Blood Units collected from 17th Sep 2023 till date">&#9432;</sup>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="statsRow">
+            <!-- <strong>Data from 17th Sep 2023 onwards : &nbsp;</strong> Last update: &nbsp;<span id="statsTime"></span> -->
+            <strong><i>Sewa Pakhwara 17th Sep 2023 onwards </i></strong> Last update:&nbsp;<span id="statsTime"></span>
+            <button onclick="loadStatsCounter(); loadStatsChart();loadStatsTable();" class="btn" title="Refresh Stats"><i
+                    class="fa fa-refresh"></i></button>  <!-- loadStatsChart();loadStatsTable(); -->
+        </div>
+    </section>
+
+<!-- mbbd2 -->
+ <section id="counter">
+        <div class="counter-title row text-center">
+            <!-- <h2 class="animate-text row">Total Blood Donation Statistics</h2> -->
+        </div>
+        <div class="counter-row row" style="width:55%">
+            
+            <div class="counter-container" style="background-color: #107ecb;">
+                <div class="count-box">
+                    <span id="registeredDonorsAll"></span>
+                </div>
+                <div>
+                    <h3>Donors Registered <sup title="Donors who volunatry registered for blood donation">&#9432;</sup></h3>
+                </div>
+            </div>
+           <div class="counter-container" style="background-color: #4738c0;">
+                <div class="count-box">
+                    <span id="donorsDonatedAll"></span>
+                </div>
+                <div>
+                    <h3>Blood Units Collected <sup
+                            title="Blood Units collected from 01 Jan 2022 till date">&#9432;</sup>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="statsRow">
+            <strong>Data from 01 Jan 2022 onwards : &nbsp;</strong> Last update: &nbsp;<span id="statsTimeAll"></span>
+            <button onclick="loadStatsCounter();loadStatsChart();loadStatsTable();" class="btn" title="Refresh Stats"><i
+                    class="fa fa-refresh"></i></button>
+        </div>
+    </section>
+
+
+      <section class="features-section" id='stats' style="justify-content: center;text-align: center; padding:7px; box-shadow: none !important;">
+      <!--   <div class="auto-container" style="justify-content: center;text-align: center;"> -->
+
+          <div class="row clearfix" style="justify-content: center;text-align: center;">
+            <!--                 <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp  hvr-grow hoverOut3" data-wow-delay="0ms" data-wow-duration="1000ms">
+                  
+                  </article>  -->
+            <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut2" data-wow-delay="400ms"
+              data-wow-duration="1000ms">
+              <!-- <div class="overlay2 section1o">
+                <a href="/BLDAHIMS/bloodbank/stockAvailability.cnt" class="text" style="color:white;">Check availability
+                  of blood across blood banks.</a>
+              </div> -->
+              <div class="front inner section1 hvr-grow-shadow" id="dd1">
+
+                <i class="fa fa-hand-holding-water fa-3x statIcon "></i> 
+                <h4 class="row statQues"> <a href="/BLDAHIMS/bloodbank/stockAvailability.cnt" class="text" style="color:white;">Blood Availability Search</a></h4>
+              </div>
+            </article>
+
+
+            <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut6" data-wow-delay="400ms"
+              data-wow-duration="1000ms">
+              <!-- <div class="overlay6 ">
+                <a href="/BLDAHIMS/bloodbank/nearbyBBRed.cnt" class="text" style="color:white;">Search for blood banks
+                  in India.</a>
+              </div> -->
+              <div class="front inner section2 hvr-grow-shadow" style="background-color:#2981c0 !important;">
+               <i class="fa fa-hospital-o fa-3x"></i> &nbsp;
+               <h4 class="row statQues"> <a href="/BLDAHIMS/bloodbank/nearbyBBRed.cnt" class="text" style="color:white;">Blood Bank Directory</a></h4>
+              </div>
+            </article>
+
+            <!-- <article id="marker" class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut5" data-wow-delay="200ms" data-wow-duration="1000ms">
+               
+                        <div class="overlay5">
+         <a style="color: white;" class="text" href="/BLDAHIMS/bloodbank/onlineDonationRequest.cnt">Get e-PASS to Donate Blood during COVID19 Lockdown</a> 
+        </div> 
+        <div style="background-color: red;" class="front inner section4 hvr-grow-shadow"> 
+         <i class="fas fa-hand-holding-water fa-3x"></i>&#160;
+         <h4 class="statQues">Donate Now</h4> 
+    
+        </div></article> -->
+
+
+            <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut2" data-wow-delay="400ms"
+              data-wow-duration="1000ms">
+              <!-- <div class="overlay2 section1o">
+                <a href="/BLDAHIMS/bloodbank/campSchedule.cnt" class="text" style="color:white;">Donate blood at a blood
+                  donation camp.</a>
+              </div> -->
+              <div class="front inner section3 hvr-grow-shadow" id="dd1" style="background-color: #f5af19 !important">
+
+               <i class="fa fa-clock-o fa-3x statIcon "></i> &nbsp;<h3 class=""></h3>
+                <h4 class="row statQues"> <a href="/BLDAHIMS/bloodbank/campSchedule.cnt" class="text" style="color:white;">Blood Donation Camps</a></h4>
+              </div>
+            </article>
+
+
+
+
+            <!--  <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut5"  data-wow-delay="200ms" data-wow-duration="1000ms" >
+                     <div class="overlay5"><a href="/BLDAHIMS/bloodbank/portalThalassemiaLogin.cnt" class="text" style="color:white;">Online request to get blood for Thalassemia Patients</a>
+				  </div>
+                     <div class="front inner section4 hvr-grow-shadow" style="background-color:red !important;">
+                      
+                        <i class="fas fa-hand-holding-water fa-3x"></i>&nbsp;<h4 class="statQues">Thalassemia Blood Request</h4>
+                    </div>
+                  </article>   -->
+            <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut1" data-wow-delay="400ms"
+              data-wow-duration="1000ms">
+              <!-- <div class="overlay1 section5o">
+                <a href="/BLDAHIMS/bloodbank/portalDonorLogin.cnt" class="text" style="color:white;">Donor
+                  profile.</a>
+              </div> -->
+              <div class="front inner section4 hvr-grow-shadow" id="dd3" style="background-color:#F12711 !important;">
+                <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i> &nbsp;
+                <h4 class="row statQues"><a href="/BLDAHIMS/bloodbank/portalDonorLogin.cnt" class="text" style="color:white;">Donor Login</a></h4>
+              </div>
+
+
+            </article>
+
+
+
+            <article class="col-md-2 col-sm-4 col-xs-6  wow fadeInUp flipContainer hoverOut1" data-wow-delay="400ms"
+              data-wow-duration="1000ms">
+              <!-- <div class="overlay1 section5o">
+                <a href="/BLDAHIMS/bloodbank/onlineCampRequestNewBB.cnt" class="text" style="color:white;">Register as
+                  Voluntary Blood Camp.</a>
+              </div> -->
+              <div class="front inner section5 hvr-grow-shadow" id="dd3" style="background-color:#216711 !important;">
+                <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i> &nbsp;
+                <h4 class="row statQues"><a href="/BLDAHIMS/bloodbank/onlineCampRequestNewBB.cnt" class="text" style="color:white;">Register  Voluntary Blood Camp</a></h4>
+              </div>
+
+
+            </article>
+
+
+          </div>
+       <!--  </div> -->
+      </section>
+
+      <!-- <section id="pricing">
+			<br><br> -->
+      <!--    <div class="container">
+      <div class="row">
+        <div class="heading text-center col-sm-10 col-sm-offset-1 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+          <h2>Services</h2>
+          <div class="col-md-12 typeHeading">
+       			<h1 class="learnAbout">Services</h1>
+       		</div>
+          <p>eRaktKosh is an initiative to connect, digitize and streamline the work flow of blood banks across the nation</p>
+        </div>
+      </div>
+      <div class="pricing-table">
+        <div class="row">
+         <div class="col-sm-3">
+            <div class="single-table wow flipInY" data-wow-duration="1000ms" data-wow-delay="1100ms">
+              <h3>My Donations</h3>
+              <div class="price">
+                <div class="service-icon hvr-bounce-to-top svcDonation">
+              <i class="fa fa-user"></i>
+            </div>                  
+              </div>
+              
+              <p> Register, track and maintain your profile
+              </p>
+              <button  class="hvr-sweep-to-right btn btn-lg btn-primary svcDonation">Start Now</button>
+            </div>
+          </div> 
+           <div class="col-sm-3">
+            <div class="single-table wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <h3>Camp Schedule</h3>
+              <div class="price">
+               <div class="service-icon hvr-bounce-to-top svcCamp">
+              <i class="fa fa-clock-o "></i>
+            </div> $9<span>/Month</span>                          
+              </div>
+              
+               <p>View and register for Blood Donation camps </p>
+              <button  class="hvr-sweep-to-right btn btn-lg btn-primary svcCamp">Register Now</button>
+            </div>
+          </div>
+         <div class="col-sm-3">
+            <div class="single-table wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <h3>Blood Availability</h3>
+              <div class="price">
+               <div class="service-icon hvr-bounce-to-top svcStock">
+              <i class="fa fa-tint "></i>
+            </div> $9<span>/Month</span>                          
+              </div>
+              
+              <p>Get status of available blood stock in blood banks</p>
+              <button  class="hvr-sweep-to-right btn btn-lg btn-primary svcStock">Check Blood Availability</button>
+              
+            </div>
+          </div>          
+          <div class="col-sm-3">
+            <div class="single-table wow flipInY" data-wow-duration="1000ms" data-wow-delay="700ms">
+              <h3>Nearby Blood Banks</h3>
+              <div class="price">
+               <div class="service-icon hvr-bounce-to-top svcNearby">
+              <i class="fa fa-map-marker "></i>
+            </div> $9<span>/Month</span>                          
+              </div>
+              
+              <p>
+              Get contact and navigation details of blood banks
+              </p>
+              <button  class="hvr-sweep-to-right btn btn-lg btn-primary svcNearby">Donate Now</button>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    <br><br> -->
+      <!--   </section> -->
+      <!-- 	
+          <section  class="features-section textual notificationsInner container-fluid " >
+           <div class="row">
+            <div  class="auto-container col-md-7 col-xs-12 col-sm-12">
+              <section class="one-column-full">
+                  <article class="column wow rotateInDownLeft text-left" data-wow-delay="0ms" data-wow-duration="1000ms">
+                     <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+                       <h3 class='learnAbout' style="color:black">Notifications</h3> 
+                     </div>
+                     <div  class="check-listing listing">
+                        <ul id = "notices">
+                          
+                        </ul>
+                     </div>
+                  </article>
+               </section>
+               <hr />
+               </div>
+               <div class="col-md-5 col-xs-12 col-sm-12">
+               <div class="impDaysContainer">
+               <h3 class='learnAbout'>Important Days</h3>
+               <i class="glyphicon glyphicon-chevron-up i-bg" id="nt-prev"></i>
+               <ul class="importantDays">
+               <li><img src="assets/thumbs/hemophilia.jpg" alt="world hemophilia day" class="circle"> <a href="javascript:void(0)" class="font-color">World Hemophilia Day - 17 April</a> </li>
+               <li><img src="assets/thumbs/donationDay.jpg" alt="world donation day" class="circle"> <a href="javascript:void(0)" class="font-color">World Donation Day - 14 June</a> </li>
+               <li><img src="assets/thumbs/voluntary.jpg" alt="world donation day" class="circle"> <a href="javascript:void(0)" class="font-color">World Voluntary Donation Day - 1 October </a> </li>
+               <li><img src="assets/thumbs/whealthDay.jpg" alt="world donation day" class="circle"> <a href="javascript:void(0)" class="font-color">World Health Day - 7 April </a> </li>
+               <li><img src="assets/thumbs/thalDay.jpg" alt="world donation day" class="circle"> <a href="javascript:void(0)" class="font-color">World Thalassemia Day - 8 May</a> </li>
+               <li>World Cancer Day 4th Feburary </li>
+               <li>World Cancer Day 4th Feburary </li>
+               </ul>
+               <i class="glyphicon glyphicon-chevron-down i-bg" id="nt-next"></i>
+               </div>
+            
+               </div>
+               </div>
+               </section>
+                <section id="twitter" class="parallax">
+     <div>
+      <a class="twitter-left-control" href="#twitter-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="twitter-right-control" href="#twitter-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="twitter-icon text-center">
+              <i class="fa fa-tint"></i>
+              <h4>Video Gallery  </h4>
+            </div>
+            <div class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="item active" >
+                 <iframe class = "video" src="https://www.youtube.com/embed/STlzQvTN46M"></iframe>
+                 <p>Let's Donate Blood &nbsp;<a href="/BLDAHIMS/bloodbank/transactions/video.html"><span>View More</span></a></p>
+                </div>
+                <div class="item">                                
+                       <iframe class = "video" src="https://www.youtube.com/embed/oTayf-OIB3Y"></iframe>  
+                         <p>Dr. J.S. Arora, General Secretary at National Thalassemia Welfare Society & Federation of Indian Thalassemia, New Delhi&nbsp;<a href="/BLDAHIMS/bloodbank/transactions/video.html"><span>View More</span></a></p>              
+                          </div>
+                <div class="item">
+               <iframe class = "video" src="https://www.youtube.com/embed/bTiws2YloYI"></iframe>     
+  		  <p>Kids Life saving Message : Let's do it. Donate Blood&nbsp;<a href="/BLDAHIMS/bloodbank/transactions/video.html"><span>View More</span></a></p>  
+  		         </div>
+                <div class="item">                                
+             <iframe class = "video" src="https://www.youtube.com/embed/Y2F6GtNGNSA"></iframe> 
+             <p>Kids creation1: Thalassemia Awareness&nbsp;<a href="/BLDAHIMS/bloodbank/transactions/video.html"><span>View More</span></a></p>       
+                    </div>
+                                     
+            </div>                    
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      </section>
+
+               <section class="features-section " id="chartsSection">
+             
+				<div class="auto-container">
+              <section class="two-column-full">
+              <div class="sec-title wow fadeInUp"  data-wow-delay="200ms" data-wow-duration="1000ms">
+                       <h1 style='margin-bottom:32px'>Statistics</h1>
+                       <div class="col-md-12 typeHeading">
+					       <h1 class="learnAbout">Statistics</h1>
+					   </div>
+                     </div>
+              <article class="column wow rotateInDownLeft text-left" data-wow-delay="0ms" data-wow-duration="1000ms">
+                     
+               <div id="bbchart4" style="min-width: 310px; height: 400px; margin: 0 auto"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+               </article>
+               <article class="column wow rotateInDownRight text-left" data-wow-delay="0ms" data-wow-duration="1000ms">
+                     <div class="sec-title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
+                       <h3>Statistcs</h3>
+
+                     </div>
+               <div id="bbchart2" style="min-width: 310px; height: 400px; margin: 0 auto">
+             		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+				 </div>
+               </article>
+                
+               
+               </section>
+               </div>
+
+</section> -->
+
+      <!--    </div> -->
+
+      <div class='row' style='padding-top:4px;'>
+        <div class='row text-center'>
+          <div class='col-md-12 typeHeading'>
+            <h1 class='learnAbout'>Learn About Donation</h1>
+          </div>
+        
+        <br><br>
+        <div class="wow col-sm-6 rotateInDownRight text-center" data-wow-delay="0ms" data-wow-duration="1000ms">
+          <!-- <img src='assets/donationFact.jpg'></img> -->
+          <picture>
+            <source srcset="assets/webp/donationFact.webp" type="image/webp">
+            <source srcset="assets/donationFact.jpg" type="image/jpeg">
+            <img src='assets/donationFact.jpg' alt='One Donation Can save upto three lives'>
+          </picture>
+          <blockquote>
+            <p style='font-family:oswald'>After donating blood, the body works to replenish the blood loss. This
+              stimulates the production of new blood cells and in turn, helps in maintaining good health.
+            <p>
+          </blockquote>
+
+          <button onclick="window.location='/BLDAHIMS/bloodbank/nearbyBBRed.cnt'"
+            class='btn btn-danger svcNearBy hvr-sweep-to-right '><i class='fa fa-tint'></i>&nbsp; Donate Now</button>
+          <br><br>
+        </div>
+
+
+        <div class='col-sm-6' align="center" style="font-size: 1.5rem;">
+          <table class="table table-responsive  " >
+            <tbody>
+              <tr>
+                <th colspan="3" style='color:white;background-color:red;'>Compatible Blood Type Donors</th>
+              </tr>
+              <tr>
+                <td><b>Blood Type</b></td>
+                <td><b>Donate Blood To</b></td>
+                <td><b>Receive Blood From</b></td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>A+</b></span></td>
+                <td>A+ AB+</td>
+                <td>A+ A- O+ O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>O+</b></span></td>
+                <td>O+ A+ B+ AB+</td>
+                <td>O+ O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>B+</b></span></td>
+                <td>B+ AB+</td>
+                <td>B+ B- O+ O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>AB+</b></span></td>
+                <td>AB+</td>
+                <td>Everyone</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>A-</b></span></td>
+                <td>A+ A- AB+ AB-</td>
+                <td>A- O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>O-</b></span></td>
+                <td>Everyone</td>
+                <td>O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>B-</b></span></td>
+                <td>B+ B- AB+ AB-</td>
+                <td>B- O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>AB-</b></span></td>
+                <td>AB+ AB-</td>
+                <td>AB- A- B- O-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div></div>
+      <!-- "Info Window ends" -->
+
+      <div class='row donationTypes' style="font-size: 1.5rem;" >
+
+        <div class='col-md-12  donationTypeInfoWindow text-center' >  <!-- col-md-offset-2 -->
+          <header class="typeHeading">
+            <h1>Types of donation</h1>
+          </header>
+          <!-- /Header -->
+
+          <!-- Content -->
+          <div class="content">
+            <p style="text-align: center;">The average human body contains about five liters of blood, which is made of several cellular
+              and non-cellular components such as <strong>Red blood cell</strong>, 
+               <strong>Platelet</strong>, and <strong>Plasma</strong>.</p>
+            <p style="text-align: center;">Each type of component has its unique properties and can be used for different
+                                             indications. The donated blood is separated into these components
+                                             by the blood centre and one donated unit can save upto four lives depending on the number of
+                                              components separated from your blood.</p>
+            <!-- <p style="text-align: center;">For <strong>plasma</strong> and <strong>platelet</strong> donation you must
+              have donated whole blood in past two years.</p> -->
+
+          </div>
+          <br><br>
+          <!-- "Tabs" -->
+          <ul class="nav nav-tabs">
+
+            <li onclick="openInfo(event, 'wholeBlood')" id="wb" class=" active infoLink"><a
+                href="javascript:void(0)">Packed Red Blood cells</a></li>
+            <li onclick="openInfo(event, 'plasma')" id="pls" class=" infoLink"><a href="javascript:void(0)">Plasma</a>
+            </li>
+            <li onclick="openInfo(event, 'platelet')" id="plt" class=" infoLink"><a
+                href="javascript:void(0)">Platelet</a></li>
+          </ul>
+
+
+          <div class='row tabInfo' id='wholeBlood'>
+            <div class='col-md-4 '>
+
+              <h3>What is it?</h3>
+
+              <p>
+                Blood Collected straight from the donor into a blood bag and mixed with an anticoagulant is
+called as whole blood. This collected whole blood is then centrifuged and red cell, platelets and
+plasma are separated. The separated Red cells are mixed with a preservative to be called as
+packed red blood cells.</p>
+
+              <h3>Who can donate?</h3>
+
+              <p>You need to be 18-65 years old, weight 45kg or more and be fit and healthy.</p>
+
+
+            </div>
+            <div class='col-md-4 infoContent'>
+              <h3>User For?</h3>
+
+              <p>
+               Correction of severe anemia in a number of conditions and blood loss in case of child birth,
+                surgery or trauma settings.</p>
+
+              <h3>Lasts For?</h3>
+
+              <p>Red cells can be stored for 42 days at 2-6 degree celsius.</p>
+
+            </div>
+            <div class='col-md-4 '>
+              <h3>How long does it take to donate?</h3>
+
+              <p>
+                15-30 minutes to donate.including the pre-donation check-up.</p>
+
+              <h3>How often can I donate?</h3>
+
+              <p>Male donors can donate again after 90 days and female donors can donate again after 120 days.</p>
+
+            </div>
+          </div>
+
+          <div class='row tabInfo' style='display:none' id='plasma'>
+            <div class='col-md-4 '>
+
+              <h3>What is it?</h3>
+
+              <p>
+                The straw-coloured liquid in which red blood cells, white blood cells, and platelets float in is called plasma.Contains
+                special nutrients which can be used to create 18 different type of medical products to treat many
+                different medical conditions. Plasma can be obtained from the collected whole blood after red blood cells and platelets have
+				been separated. Additionally, it can also be collected using an apheresis equipment where other
+				components are returned to the donor. The former is a common method of plasma preparation in
+				our country.</p>
+
+              <h3>Who can donate?</h3>
+
+              <p>The donation criteria is similar to that of red blood cell. However, for apheresis plasma
+				collection minimum weight is 50 kgs.</p>
+
+
+            </div>
+            <div class='col-md-4 infoContent'>
+              <h3>User For?</h3>
+
+              <p>
+               Used for bleeding patients with
+				coagulation factor deficiency such as hemophilia A and B, von willibrand disease etc. also used
+				in cases of blood loss due to trauma.</p>
+
+              <h3>Lasts For?</h3>
+
+              <p>Plasma after separation if frozen below -30 degrees can be stored up to one year.</p>
+
+            </div>
+            <div class='col-md-4 '>
+              <!-- <h3>How does it work?</h3>
+
+              <p>
+                We collect your blood, keep plasma and return rest to you by apheresis donation.</p>
+ -->
+              <h3>How long does it take?</h3>
+
+              <p>
+                15-30 minutes to donate including the pre-donation check-up.</p>
+
+              <h3>How often can I donate?</h3>
+
+              <p>similar to the red cell donation.</p>
+
+            </div>
+          </div>
+
+          <div class='row tabInfo' style='display:none' id='platelet'>
+            <div class='col-md-4 '>
+
+              <h3>What is it?</h3>
+
+              <p>
+                These are cellular elements in blood which wedge together to help to clot and reduce bleeding. Always in high
+                demand, Vital for people with low platelet count, like hematology and cancer patients.</p>
+
+              <h3>Who can donate?</h3>
+
+              <p>One can donate whole blood from which the blood centre will separate platelets from other
+components. Criteria similar to whole blood donation apply.
+Alternatively, one can donate using apheresis equipment where only platelets are collected and
+rest components are returned back to donate. One need to satisfy whole blood criteria and pre-
+donation screening which include negative infectious markers and platelet count &gt;1,50,000 per
+microlitre of blood. Weight should be &gt;50kgs.</p>
+
+
+            </div>
+            <div class='col-md-4 infoContent'>
+              <h3>User For?</h3>
+
+              <p>
+                Conditions with very low platelet count such as Cancer, blood diseases, trauma, dengue etc.</p>
+
+              <h3>Lasts For?</h3>
+
+              <p>can be stored for 5 days at 20-24 degree celsius.</p>
+
+            </div>
+            <div class='col-md-4 '>
+              <h3>How does it work?</h3>
+
+              <p>
+                We collect your blood, keep platelet and return rest to you by apheresis donation.</p>
+
+              <h3>How long does it take?</h3>
+
+              <p>
+                45-60 minutes to donate. 2-3 hours for pre-donation screening.</p>
+
+              <h3>How often can I donate?</h3>
+
+              <p>Every 2 weeks but should not exceed more than 24 times in a year.</p>
+
+            </div>
+          </div>
+          <br><br>
+          <button type='button' onclick="window.location='/BLDAHIMS/bloodbank/nearbyBBRed.cnt'"
+            style='border-radius:0px' class='btn-lg btn btn-danger svcNearBy hvr-sweep-to-right '>Find Nearest Blood
+            Bank To Donate</button>
+          <br><br>
+        </div>
+      </div>
+
+      <section id="twitter" class="parallax"  style="font-size: 1.8rem;">
+        <div>
+          <a class="twitter-left-control" href="#twitter-carousel" role="button" data-slide="prev"><i
+              class="fa fa-angle-left"></i></a>
+          <a class="twitter-right-control" href="#twitter-carousel" role="button" data-slide="next"><i
+              class="fa fa-angle-right"></i></a>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <div class="twitter-icon text-center">
+                  <i class="fa fa-tint"></i>
+                  <h4>How Donation Works </h4>
+                </div>
+                <div id="twitter-carousel" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="item active wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                      <i class='fa fa-clock-o donationWork'></i>
+                      <p>It Takes Only an Hour&nbsp;<a href="#"><span>Donate blood save lives !</span> Read Blood
+                          Donation Facts</a></p>
+                    </div>
+                    <div class="item">
+                      <i class='fa fa-clock-o donationWork'></i>
+                      <p>There is nothing better than saving a life &nbsp;<a href="#"><span>Every blood donor is a
+                            hero,</span> Read Blood Donation Facts</a></p>
+                    </div>
+                    <div class="item">
+                      <i class='fa fa-inr donationWork'></i>
+                      <p>It Costs Nothing&nbsp;<a href="#"><span>Give blood and stay healthy,</span> Read Blood Donation
+                          Facts</a></p>
+                    </div>
+                    <div class="item">
+                      <i class='fa fa-beer donationWork'></i>
+                      <p>You will get free refreshments after donation&nbsp;<a href="#"><span>Donation of blood is safe
+                            and healthy, </span>Read Blood Donation Facts</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!--Main Footer-->
+      <!--  <ul id="js-news" class="js-hidden">
+
+	</ul>
+	 -->
+      <!-- for map -->
+      <!-- 	<h1 id="mapHeading" class="text-center">eRaktKosh Enabled Blood Banks in India</h1>
+	<div id="bblist">
+				<h5 class="text-right">
+					<span id="latlon" class="label label-info toggle2">eRaktKosh Enabled Blood Banks </span>
+					</h5>
+					<h5 class="text-left">
+						<span id="currentLocation" class="label label-info"></span>
+						</h5> 						
+			</div>
+			
+			
+<div  class='wrapper'>
+
+<div id='maptutorial' class='maptutorial row' style='' >
+<div style='width:100%;' class='col-md-12 mapText text-center' >
+Click on any map marker  <i class='fa-tint fa' style='color:red'></i> to get complete detail of blood bank.<br>
+<button id='startNow' type='button' class='btn btn-danger btn-lg hvr-icon-drop'  style='border-radius:0px'>Start Now </button>
+</div>
+</div>
+
+<div id="google-map" class="wow fadeIn" data-latitude="28.6183025" data-longitude="77.3621644" data-wow-duration="1000ms" data-wow-delay="400ms"></div>
+<div id="mySidenav" class="sidenav">
+<input type="hidden" id="navHospCode" value=""/>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <div class='mySideNavInner'>
+ <div class='row'>
+ <div  class='col-sm-12'>
+ <p id='mapName' ></p>
+ </div>
+ 
+
+ <div  class='col-sm-12'>
+ <a target='_blank' title=' Get Directions' rel="noopener noreferrer" id='myLocationMap' class='btn btn-default' href=''><i class='fa fa-location-arrow'></i> </a>
+ </div>
+ </div>
+<br>
+ <div class="tab">
+  <ul class="nav nav-tabs">
+  <li onclick="openFeature(event, 'stockDetails')" id="stock" class=" active tablinks"><a href="javascript:void(0)">Stock Details</a></li>
+  <li  onclick="openFeature(event, 'campDetails')" id="camp" class="  tablinks"><a href="javascript:void(0)">Camp Details</a></li>
+  
+	</ul>
+  <div id="stockDetails" style=""  class="tabcontent">
+  <label for='bloodComponentType'>Stock Details</label>
+  	<select name="bloodComponentType" id="bloodComponentType" onchange="componentSelected(this.value)" class="form-control"><option value="-1">Select Blood Component</option> 
+ 							  <option value="11" selected>Whole Blood</option>
+								<option value="24">WBR2(inert ABO)</option>
+								<option value="23">WBR1 (Leuko Reduced )</option>
+								<option value="26">Washed Blood Cell</option>
+								<option value="18">Single Donor Plasma</option>
+								<option value="22">Saline wash RBC</option>
+								<option value="16">Platelet Rich Plasma</option>
+								<option value="15">Platelet Poor Plasma</option>
+								<option value="20">Platelet Concentrate</option>
+								<option value="14">Platelet</option>
+								<option value="19">Plasma</option>
+								<option value="12">Packed Red Blood Cells</option>
+								<option value="13">Fresh Frozen Plasma</option>
+								<option value="17">Cryoprecipitate</option>
+								<option value="21">Cryo Poor Plasma</option>
+								</select>
+  <div  id="stockDetailsData">
+  Loading &nbsp;<i class="fa fa-spinner fa-spin"></i>
+  </div>
+	</div>
+
+	<div id="campDetails" style='display:none;'  class="tabcontent">
+	  Camp Details
+	  <div class="campDetailsData" id="campDetailsData">
+  	Loading &nbsp;<i class="fa fa-spinner fa-spin"></i>
+  	</div>
+	</div>
+</div>
+ </div>
+ </div>
+ </div>  -->
+      <footer class="main-footer">
+        <!--Footer Upper-->
+        <!--Footer Lower-->
+        <div class="footer-lower">
+          <div class="auto-container sitemap">
+            <div class="row clearfix">
+              <div class='col-md-3 col-sm-12 col-xs-12  wow bounceInLeft'>
+                <h3 class='text-left'>Looking for Blood</h3>
+                <ul style='line-height:165%'>
+                  <li><a href='/BLDAHIMS/bloodbank/stockAvailability.cnt'>Blood Availability</a></li>
+                  <li><a href='/BLDAHIMS/bloodbank/nearbyBBRed.cnt'>Blood Bank Directory</a></li>
+                  <li><a href='/BLDAHIMS/bloodbank/portalThalassemiaLogin.cnt'>Thalassemia Request</a></li>
+                </ul>
+              </div>
+              <div class='col-md-3 col-sm-12 col-xs-12  wow bounceInLeft'>
+                <h3 class='text-left'>Want to Donate Blood</h3>
+                <ul style='line-height:165%'>
+                  <li><a href='/BLDAHIMS/bloodbank/campSchedule.cnt'>Blood Donation Camps</a></li>
+                  <!--   <li><a href='/BLDAHIMS/bloodbank/onlineDonationRequest.cnt'>Appointment for Blood Bank</a></li> -->
+                  <li><a href='/BLDAHIMS/bloodbank/portalDonorLogin.cnt'>Donor Login</a></li>
+                  <li style="display: none;"><a href="/BLDAHIMS/bloodbank/voluntryDonorsGroupRegistration.cnt">Voluntary Donor Group</a></li>
+                  <li><a href='/BLDAHIMS/bloodbank/donateblood.cnt'>About Blood Donation</a></li>
+                  <li><a href="/BLDAHIMS/bloodbank/onlineCampRequestNewBB.cnt" title="Register VBD Camp"
+                      href="/BLDAHIMS/bloodbank/donateblood.cnt">Register VBD Camp</a></li>
+
+
+                </ul>
+              </div>
+              <div class='col-md-3 col-sm-12 col-xs-12  wow bounceInLeft'>
+                <h3 class='text-left'>Blood Bank Login</h3>
+                <ul style='line-height:165%'>
+                  <li><a href='/eRaktKosh/hissso/loginLogin'>eRaktkosh Login</a></li>
+                  <li><a href='/BLDAHIMS/bloodbank/bbOnboard.cnt?hmode=GETONBOARDFORMESSENTIAL'>Add your Blood Bank</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- <div style='border-right: 1px solid #616161;border-left: 1px solid #616161;' class='col-md-4 col-sm-12 col-xs-12  wow bounceInLeft'>
+                     <h3 class='text-left'>Login</h3>
+                     <ul style='line-height:165%'>
+					  
+					  <li><a href='/BLDAHIMS/bloodbank/portalDonorLogin.cnt'>My Donations</a></li>
+					  <dd><a href='/eRaktKosh/hissso/loginLogin'>Portal Login</a></dd>
+					 
+					  
+					</ul>
+                    </div> -->
+              <div class='col-md-3 col-sm-12 col-xs-12  wow bounceInLeft'>
+                <h3 class='text-left'>About Us</h3>
+                <ul style='line-height:165%'>
+
+                  <!--  <li><a href='/BLDAHIMS/bloodbank/aboutNHM.cnt'>About NHM Initiatives</a></li> -->
+                  <li><a href='/BLDAHIMS/bloodbank/about.cnt'>About eRaktkosh</a></li>
+                  <li><a title="All Notifications" href="/BLDAHIMS/bloodbank/notification.cnt">Notifications</a></li>
+                  <li><a title="Eraktkosh FAQs" href="/BLDAHIMS/bloodbank/eraktkoshfaq.cnt">Eraktkosh FAQs</a></li>
+                  <li><a href='/BLDAHIMS/bloodbank/transactions/bbpublicindexGallery.html'>Gallery</a></li>
+                  <li><a href="/BLDAHIMS/bloodbank/transactions/video.html" title="Video gallery">Video Gallery</a></li>
+                  <li><a href="/BLDAHIMS/bloodbank/contact.cnt" title="Contact No">Contact Us</a></li>
+                  <li><a href="/BLDAHIMS/bloodbank/downloadMobile.cnt" title="Mobile Apps">Mobile Apps</a></li>
+
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="">
+              <div class="row clearfix">
+                <!--Footer Logo-->
+                <div class="col-md-3 col-sm-3 col-xs-12 footer-logo wow bounceInLeft text-center" data-wow-delay="200ms"
+                  data-wow-duration="1500ms">
+                  <div class='col-md-12 col-xs-12'> <a rel="noopener" href="http://mohfw.nic.in/" target='_blank'> <img
+                        src="assets/images/icons/MOHF.png" style='float:left;'
+                        alt="Ministry of health and family welfare"></a></div>
+                  <!-- <div style='padding:17px 0px 0px 0px;' class='col-md-9 col-xs-12'  >   <a  onclick='return external_link();' rel="noopener" href="http://mohfw.nic.in/" target='_blank'>Ministry of Health and Family Welfare</a></div> -->
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 footer-logo wow bounceInRight text-center"
+                  data-wow-delay="200ms" data-wow-duration="1500ms">
+                  <div class='col-md-12 col-xs-12'> <a href='https://india.gov.in/' target='_blank' rel="noopener"> <img
+                        src="assets/images/icons/india-gov.png" alt="National Portal of India"></a></div>
+
+                </div>
+
+
+
+
+                <div class="col-md-2 col-sm-2 col-xs-12 footer-logo wow bounceInBottom text-center"
+                  data-wow-delay="200ms" data-wow-duration="1500ms">
+                  <div class='col-md-12 col-xs-12'>
+                    <a href='https://web.umang.gov.in/' target='_blank' rel="noopener">
+                      <img style="width: 60px;height: 80px;" src="assets/images/icons/umang.jpg"
+                        alt="National Health Portal"></a>
+                  </div>
+
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 footer-logo wow bounceInBottom text-center"
+                  data-wow-delay="200ms" data-wow-duration="1500ms">
+                  <div class='col-md-12 col-xs-12'>
+                    <a href='https://www.nhp.gov.in/'>
+                      <img src="assets/images/icons/logo_nhp_back.png" alt="National Health Portal"></a>
+                  </div>
+
+                </div>
+
+
+                <div class="col-md-2 col-sm-2 col-xs-12 footer-logo wow bounceInRight text-center"
+                  data-wow-delay="200ms" data-wow-duration="1500ms">
+                  <div class='col-md-12 col-xs-12'><a href='http://nhm.gov.in' target='_blank' rel="noopener"></a> <img
+                      src="../../hisglobal/bbpublic/images/logo-nrhm.png" alt="National Health Mission"></div>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 footer-logo text-center">
+
+                <!-- Start of StatCounter Code for Default Guide -->
+                <script type="text/javascript">
+                  var sc_project = 10830880;
+                  var sc_invisible = 1;
+                  var sc_security = "81667bbc";
+                  var scJsHost = (("https:" == document.location.protocol) ?
+                    "https://secure." : "http://www.");
+                  document.write("<sc" + "ript type='text/javascript' src='" +
+                    scJsHost +
+                    "statcounter.com/counter/counter.js'></" + "script>");
+                </script>
+
+                <!-- <script type="text/javascript" async
+						src="http://www.statcounter.com/counter/counter.js"></script> -->
+                <noscript>
+                  <div class="statcounter"><a title="hits counter" href="http://statcounter.com/" target="_blank"><img
+                        class="statcounter" src="http://c.statcounter.com/10830880/0/81667bbc/1/"
+                        alt="hits counter"></a></div>
+                </noscript>
+                <span>Visitor No.</span><img style="padding: 0px;" src="http://c.statcounter.com/10830880/0/81667bbc/0/"
+                  alt="web statistics">
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12 footer-logo text-center "><span id='copyYear'></span> <a
+                  href="http://mohfw.nic.in/" target='_blank'>by Ministry of Health and Family Welfare</a> </div>
+              <div class="col-md-6 col-sm-12 col-xs-12 footer-logo text-center "> &reg;&nbsp;Designed and Developed by<a
+                  href="http://cdac.in/" target='_blank'> Centre for Development of Advanced Computing</a> </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 footer-logo text-center ">
+              <span><a id="mylink" href="/BLDAHIMS/bloodbank/termsAndConditions.cnt">Terms & Conditions</a></span> |
+              <span><a id="mylink" href="/BLDAHIMS/bloodbank/privacyPolicy.cnt">Privacy Policy</a></span> | <span><a
+                  id="mylink" href="/BLDAHIMS/bloodbank/accessibilityStmt.cnt">Accessibility Statement</a></span> |
+              <span id='updatetime'></span> | <span><a id="mylink2" href="/BLDAHIMS/bloodbank/eraktkoshSiteMap.cnt">Site
+                  Map</a></span>
+            </div>
+            <script>
+              document.getElementById('copyYear').innerHTML = "&copy; 2016 -" + new Date().getFullYear();
+              var d = (new Date()).toString().split(' ').splice(1, 3).join(' ');
+              document.getElementById('updatetime').innerHTML = "Last Updated : " + d;
+            </script>
+
+          </div>
+        </div>
+      </footer>
+
+      <div id='second'></div>
+      <!--End pagewrapper-->
+      <!--Scroll to top-->
+      <div class="scroll-to-top"></div>
+
+
+
+    </div>
+
+    <!--  Abhijat   chatbot code 31 dec 2018 style="right:290px"-->
+    <!-- <div class="image">
+      <img src="raktbot/static/rb.png" height="80" width="80" onclick="openForm()">
+    </div>
+    <div class="chat-popup" id="myForm">
+      <div class="msg_head" onclick="closeForm_cb()">RaktBot<div class="cm" id="cmid" title="Close">�</div>
+      </div>
+      <div class="msg_wrap">
+        <div class="msg_body">
+          <div class="msg_a">Hi! I'm RaktBot. </div>
+          <div class="msg_a">I am here to help you with blood search, blood donation FAQ's and anything about
+            E-RaktKosh.</div>
+          <div class="msg_a">Type 'help' for help and 'contact' for contact details. </div>
+          <div class="msg_push"></div>
+        </div>
+        <div class="msg_footer"><textarea class="msg_input" rows="2" style="resize:none"
+            placeholder="Type here"></textarea></div>
+        <!-- <div class="close" onclick="closeForm()">Close</div> -->
+      </div>
+    </div> -->
+
+    <!--  Abhijat   chatbot code 31 dec 2018 end-->
+
+
+
+
+    <!--  Abhijat   chatbot code 31 dec 2018 style="right:290px"-->
+    <!-- <div class="image">
+<!-- <img src="raktbot/static/rb.png" height="80" width="80" onclick="openForm()">
+</div>
+<div class="chat-popup" id="myForm">
+<div class="msg_head" onclick="closeForm_cb()">RaktBot<div class="cm" id="cmid" title="Close">�</div></div>
+  <div class="msg_wrap">
+		<div class="msg_body">
+			<div class="msg_a">Hi! I'm RaktBot.	</div>
+			<div class="msg_a">I am here to help you with blood search, blood donation FAQ's and anything about E-RaktKosh.</div>
+			<div class="msg_a">Type 'help' for help and 'contact' for contact details. </div>	
+			<div class="msg_push"></div>
+		</div>
+	<div class="msg_footer"><textarea class="msg_input" rows="2" style = "resize:none" placeholder="Type here"></textarea></div>
+</div>
+</div> --> -->
+
+    <!--  Abhijat   chatbot code 31 dec 2018 end-->
+
+    <!-- Prabhu Modal Code 2 Sept 2022 -->
+    <div class="modal fade" id="mbdd-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- 			 <div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			  <h4 class="modal-title" id="myModalLabel">Mega Blood Donation Drive</h4>
+			</div> -->
+          <div class="modal-body">
+            <div class="container text-center" style="margin:auto; width: fit-content;">
+              <div class="row mbdd-header">
+                <h3>Mega Blood Donation Drive 2022</h3>
+              </div>
+              <div class="row mbdd-content-row">
+                <div class="col-sm-4  text-center">
+                  <h5><b>17th</b><br> Sept 2022</h5>
+                </div>
+                <div class="col-sm-7 mbdd-slogan text-center">
+                  <h6>Donate Blood to Save Lives. One donation can save 3 lives.</h6>
+                </div>
+              </div>
+              <div class="row mbdd-credits">
+                <h6>Coordinators & Collabrators:</h6>
+                <div class="col-sm-2">
+                  <img src="assets/abtyp.png" class="img-fluid">
+                </div>
+                <div class="col-sm-2">
+                  <img src="assets/75 years.png" class="img-fluid">
+                </div>
+                <div class="col-sm-2">
+                  <img src="assets/mbdd.png" class="img-fluid">
+                </div>
+                <div class="col-sm-2">
+                  <img src="assets/red cross.png" class="img-fluid">
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/mohfw black.png" class="img-fluid" style="height: 120px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--       Code end by Prabhu  -->
+
+
+
+    <script>
+      $(document).ready(function () {
+        setTimeout(function () {
+          PopUp();
+        }, 5000); // 5000 to load it after 5 seconds from page load
+      });
+      function closeForm() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="../../hisglobal/bbpublic/assets/js/jquery-1.11.1.min.js"></script> -->
+    <script src="../../hisglobal/bbpublic/assets/elements/js/jquery.waypoints.min.js"></script>
+    <!-- "CDN's" -->
+
+    <!-- 		Code Added by Prabhu 2nd Sept 2022 -->
+<!--     <script type="text/javascript">
+      $(window).on('load', function () {
+        $('#mbdd-modal').modal('show');
+      });
+    </script> -->
+    <!-- 		Code Ended by Prabhu 2nd Sept 2022 -->
+
+    <script>
+      function handlePreloader() {
+        if ($('.preloader').length) {
+          $('.preloader').delay(500).fadeOut(500);
+        }
+      }
+      $(function () {
+        handlePreloader();
+
+      });
+
+    </script>
+    <script>
+      $.mapvar = "";
+      var x = document.getElementById("latlon"); $.locations = [['Delhi', 28.6, 77.1]]; var markersArray = [];
+      var delhi = { lat: 20.5937, lng: 78.9629 };
+      // function CenterControl(controlDiv,map){var controlUI=document.createElement('div');controlUI.style.backgroundColor='#fff';controlUI.style.border='2px solid #fff';controlUI.style.borderRadius='3px';controlUI.style.boxShadow='0 2px 6px rgba(0,0,0,.3)';controlUI.style.cursor='pointer';controlUI.style.marginBottom='22px';controlUI.style.textAlign='center';controlUI.title='Click to Get Nearyby Blood Banks ';controlUI.style.color='rgb(25,25,25)';controlUI.setAttribute('class',' mapButton');var controlText=document.createElement('div');controlText.style.fontFamily='Roboto,Arial,sans-serif';controlText.style.fontSize='16px';controlText.style.lineHeight='38px';controlText.style.paddingLeft='5px';controlText.style.paddingRight='5px';controlText.innerHTML='Near By Blood Banks';controlUI.style.display='inline-table';controlUI.style.margin='5px';controlUI.appendChild(controlText);var controlUIE=document.createElement('div');controlUIE.style.backgroundColor='#fff';controlUIE.style.border='2px solid #fff';controlUIE.style.borderRadius='3px';controlUIE.style.boxShadow='0 2px 6px rgba(0,0,0,.3)';controlUIE.style.cursor='pointer';controlUIE.style.marginBottom='22px';controlUIE.style.textAlign='center';controlUIE.style.display='inline-table';controlUIE.style.margin='5px';controlUIE.style.color='rgb(25,25,25)';controlUIE.setAttribute('class','selectedButton mapButton');controlUIE.title='Click to Get eRaktKosh Enabled Blood Banks ';controlDiv.appendChild(controlUIE);controlDiv.appendChild(controlUI);var controlText=document.createElement('div');controlText.style.fontFamily='Roboto,Arial,sans-serif';controlText.style.fontSize='16px';controlText.style.lineHeight='38px';controlText.style.paddingLeft='5px';controlText.style.paddingRight='5px';controlText.innerHTML='eRaktKosh Enabled Blood Banks';controlUIE.appendChild(controlText);controlUI.addEventListener('click',function(){getLocation();});controlUIE.addEventListener('click',function(){eEnabledBloodBanks();$($(".mapButton")[1]).removeClass("selectedButton");$($(".mapButton")[0]).addClass("selectedButton");});}
+      function CenterControl(controlDiv, map) {
+        // alert("hello");
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#fff';
+        controlUI.style.border = '2px solid #fff';
+        controlUI.style.borderRadius = '3px';
+        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.marginBottom = '22px';
+        controlUI.style.textAlign = 'center';
+        controlUI.title = 'Click to Get Nearyby Blood Banks ';
+        controlUI.style.color = 'rgb(25,25,25)';
+        controlUI.setAttribute('class', ' mapButton');
+        var controlText = document.createElement('div');
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '16px';
+        controlText.style.lineHeight = '38px';
+        controlText.style.paddingLeft = '5px';
+        controlText.style.paddingRight = '5px';
+        controlText.innerHTML = 'Near By Blood Banks';
+        controlUI.style.display = 'inline-table';
+        controlUI.style.margin = '5px';
+        controlUI.appendChild(controlText);
+
+        var controlUIE = document.createElement('div');
+        controlUIE.style.backgroundColor = '#fff';
+        controlUIE.style.border = '2px solid #fff';
+        controlUIE.style.borderRadius = '3px';
+        controlUIE.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUIE.style.cursor = 'pointer';
+        controlUIE.style.marginBottom = '22px';
+        controlUIE.style.textAlign = 'center';
+        controlUIE.style.display = 'inline-table';
+        controlUIE.style.margin = '5px';
+        controlUIE.style.color = 'rgb(25,25,25)';
+        controlUIE.setAttribute('class', 'selectedButton mapButton');
+        controlUIE.title = 'Click to Get eRaktKosh Enabled Blood Banks ';
+
+        var controlUIALL = document.createElement('div');
+        controlUIALL.style.backgroundColor = '#fff';
+        controlUIALL.style.border = '2px solid #fff';
+        controlUIALL.style.borderRadius = '3px';
+        controlUIALL.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUIALL.style.cursor = 'pointer';
+        controlUIALL.style.marginBottom = '22px';
+        controlUIALL.style.textAlign = 'center';
+        controlUIALL.style.display = 'inline-table';
+        controlUIALL.style.margin = '5px';
+        controlUIALL.style.color = 'rgb(25,25,25)';
+        controlUIALL.setAttribute('class', ' mapButton');
+        controlUIALL.title = 'Click to Get All eRaktKosh Enabled Blood Banks ';
+
+        controlDiv.appendChild(controlUIALL);
+        controlDiv.appendChild(controlUIE);
+        controlDiv.appendChild(controlUI);
+
+        var controlText = document.createElement('div');
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '16px';
+        controlText.style.lineHeight = '38px';
+        controlText.style.paddingLeft = '5px';
+        controlText.style.paddingRight = '5px';
+        controlText.innerHTML = 'eRaktKosh Enabled Blood Banks';
+        controlUIE.appendChild(controlText);
+
+        var controlTexto = document.createElement('div');
+        controlTexto.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlTexto.style.fontSize = '16px';
+        controlTexto.style.lineHeight = '38px';
+        controlTexto.style.paddingLeft = '5px';
+        controlTexto.style.paddingRight = '5px';
+        controlTexto.innerHTML = ' Blood Banks Across India';
+        controlUIALL.appendChild(controlTexto);
+
+        controlUI.addEventListener('click', function () {
+          getLocation();
+        });
+        controlUIE.addEventListener('click', function () {
+          eEnabledBloodBanks();
+          //   allBloodBanksLocation();
+          $($(".mapButton")[2]).removeClass("selectedButton");
+          $($(".mapButton")[0]).removeClass("selectedButton");
+          $($(".mapButton")[1]).addClass("selectedButton");
+        });
+
+        controlUIALL.addEventListener('click', function () {
+          allBloodBanksLocation();
+          $($(".mapButton")[2]).removeClass("selectedButton");
+          $($(".mapButton")[1]).removeClass("selectedButton");
+          $($(".mapButton")[0]).addClass("selectedButton");
+        });
+      }
+      function initialize_map() {
+
+        var mapOptions = {
+          zoom: 4,
+          scrollwheel: false,
+          center: delhi,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
+          }
+
+        };
+        $.mapvar = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+        var contentString = '';
+        var centerControlDiv = document.createElement('div');
+        var centerControl = new CenterControl(centerControlDiv, $.mapvar);
+        centerControlDiv.index = 1;
+        $.mapvar.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+
+        $.infowindow = new google.maps.InfoWindow({
+          content: '<div class="map-content"><ul class="address">' + $('.address').html() + '</ul></div>'
+        });
+
+
+
+        eEnabledBloodBanks();
+        $.mapvar.setCenter(delhi);
+        $.mapvar.setZoom(5);
+      }
+      function external_link() {
+        return 1 == confirm('You�re about to leave www.eRaktKosh.in.\nThis is a link to external website/content. This site does not belong to eRaktkosh and hence eRaktkosh shall not be liable in any case.\nPlease Continue at your own risk.') ? !0 : !1
+      }
+      function setZoom() {
+        //alert("setting zoom now");
+        google.maps.event.addDomListener(window, 'load', initialize_map);
+
+        initAutocomplete();
+        //console.log("setting zoom now");
+        //$.mapvar.setCenter(delhi);
+        // $.mapvar.setZoom(5);
+      }
+
+      function eEnabledBloodBanks() {
+        $.ajax({
+          url: "/BLDAHIMS/bloodbank/campSchedule.cnt?hmode=FETCHACTIVELOCATIONS",
+          success: function (data) {
+            $.locations = data.replace(/'/g, "\'");
+            drawLocationOnMap();
+            console.log("delhi is" + delhi);
+            $.mapvar.setCenter(delhi);
+            $.mapvar.setZoom(5); /*var markerCluster = new MarkerClusterer($.mapvar, markersArray, {maxZoom: 9,imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});*/
+          },
+          error: function (data) { }
+        });
+      }
+      function allBloodBanksLocation() {
+        $.ajax({
+          url: "/BLDAHIMS/bloodbank/campSchedule.cnt?hmode=FETCHACTIVELOCATIONS&bbDataType=1",
+          success: function (data) {
+            $.locations = data.replace(/'/g, "\'");
+            drawLocationOnMap();
+            // console.log("delhi is"+delhi);
+            $.mapvar.setCenter(delhi);
+            $.mapvar.setZoom(5); /*var markerCluster = new MarkerClusterer($.mapvar, markersArray, {maxZoom: 9,imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});*/
+          },
+          error: function (data) { }
+        });
+      }
+
+      function initAutocomplete() { autocomplete = new google.maps.places.Autocomplete((document.getElementById('location')), { types: ['geocode'] }); autocomplete.addListener('place_changed', fillInAddress); }
+
+      function fillInAddress() { console.log(autocomplete); var place = autocomplete.getPlace(); $('#lat').val(place.geometry.location.lat()); $('#lon').val(place.geometry.location.lng()); }
+
+      function drawLocationOnMap() {
+        clearOverlays();
+        $.locations = JSON.parse($.locations);
+        var image = 'assets/drop.png';
+        for (i = 0; i < $.locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng($.locations[i][1], $.locations[i][2]),
+            map: $.mapvar,
+            icon: image
+          });
+          markersArray.push(marker);
+          google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+              $.infowindow.setContent($.locations[i][0]);
+              openNav($.locations[i]);
+              $.infowindow.open($.mapvar, marker);
+            }
+          })
+            (marker, i));
+
+          marker.addListener('mouseover', function () {
+            return function () {
+              $.infowindow.setContent($.locations[i][0]);
+              //   openNav($.locations[i]);
+              $.infowindow.open($.mapvar, marker);
+            }
+          });
+
+          // assuming you also want to hide the infowindow when user mouses-out
+          marker.addListener('mouseout', function () {
+            $.infowindow.close();
+          });
+
+        }
+      }
+
+      function clearOverlays() {
+        for (var i = 0; i < markersArray.length; i++) { markersArray[i].setMap(null); }
+        markersArray = new Array();
+      }
+      function showPosition(position) {
+        $(x).addClass('label-info');
+        $(x).removeClass('label-danger');
+        $($(".mapButton")[0]).removeClass("selectedButton");
+        $($(".mapButton")[1]).removeClass("selectedButton");
+        $($(".mapButton")[2]).addClass("selectedButton");
+        goToByScroll("mapHeading");
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        $('#lat').val(lat);
+        $('#lon').val(lon);
+        getLatLonBloodBankList(lat, lon, "nearby");
+        geocodeLatLng(lat, lon);
+        x.innerHTML = "Showing Blood Banks within a radius of 30KM from your current location";
+        var LatLng = {
+          lat: lat,
+          lng: lon
+        };
+        $.mapvar.setCenter(LatLng);
+        $.mapvar.setZoom(10);
+      }
+      var waypoint = new Waypoint({ element: document.getElementById('stats'), handler: function (direction) { notify("Donate Blood ,Save Lifes!") } }); var waypoint = new Waypoint({ element: document.getElementById('stats'), handler: function (direction) { notify("A pint of blood Will do you good!") } }); var waypoint = new Waypoint({ element: document.getElementById('chartsSection'), handler: function (direction) { notify("Gift a smile, gift a drop !") } }); var waypoint = new Waypoint({ element: document.getElementById('pricing'), handler: function (direction) { notify("Gift a smile, gift a drop !") } });
+
+
+    </script>
+    <script src="../../hisglobal/bbpublic/assets/js/modernizr-custom.js"></script>
+
+    <!-- "CDN" -->
+    <script type="text/javascript"
+      src="https://maps.google.com/maps/api/js?region=IN&libraries=places&key=AIzaSyB9o2-H1VP2p3JwxC8f-yr_Le7UpuwovPE&callback=setZoom"
+      async></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+    <!--  <script src="../../hisglobal/bbpublic/assets/elements/js/bootstrap.min.js"></script> -->
+    <!-- "CDN" -->
+    <script src="../../hisglobal/bbpublic/assets/elements/js/jquery.fancybox.pack.js" async></script>
+    <script src="../../hisglobal/bbpublic/assets/elements/js/wow.js"></script>
+    <script src="../../hisglobal/bbpublic/assets/elements/js/script.js" async></script>
+
+    <script src="assets/js/bbCustom.min.js" async></script>
+    <script src="assets/js/markerclusterer.js" async></script>
+    <!-- <script src="assets/js/bbpublichome1.js" async></script> -->
+    <!-- <script src="assets/js/bbpublic.js" async></script> -->
+    
+    <script src="assets/purecounter.js" ></script>
+
+
+    <script src="../../hisglobal/bbpublic/assets/newsticker/includes/jquery.ticker.js" type="text/javascript"
+      async></script>
+    <!-- Abhijat  chatbot code 31 dec 2018 -->
+    <script src="raktbot/static/chatbot_script.js"></script>
+    <!-- Abhijat  chatbot code 31 dec 2018 end -->
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('assets/js/serviceWorker.js', { scope: 'assets/js/' })
+          .then(function (registration) {
+            console.log('Service Worker Registered');
+            registration.update();
+          });
+        navigator.serviceWorker.ready.then(function (registration) {
+          console.log('Service Worker Ready');
+        });
+      }
+
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-73827792-1', 'auto');
+      ga('send', 'pageview');
+
+      $(function () {
+        $('a[href^="http"]').each(function () {
+          $(this).on('click', function () { return external_link() });
+        });
+
+
+      });
+      function external_link() {
+        return 1 == confirm('You�re about to leave www.eRaktKosh.in.\nThis is a link to external website/content. This site does not belong to eRaktkosh and hence eRaktkosh shall not be liable in any case.\nPlease Continue at your own risk.') ? !0 : !1
+      }
+
+    </script>
+
+    <!--                   code by deepak 20-may-2016 -->
+
+   
+
+    <!-- CDN JS links -->
+    <script src="https://kit.fontawesome.com/9e17df0ea8.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"
+        integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.12.1/b-2.2.3/sl-1.4.0/datatables.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
+    <!-- Local JS -->
+    <script type="text/javascript">
+
+        function animate(obj, initVal, lastVal, duration) {
+
+            let startTime = null;
+
+            //get the current timestamp and assign it to the currentTime variable
+            let currentTime = Date.now();
+
+            //pass the current timestamp to the step function
+            const step = (currentTime) => {
+
+                //if the start time is null, assign the current time to startTime
+                if (!startTime) {
+                    startTime = currentTime;
+                }
+
+                //calculate the value to be used in calculating the number to be displayed
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+
+                //calculate what to be displayed using the value gotten above
+                obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
+
+                //checking to make sure the counter does not exceed the last value (lastVal)
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+                else {
+                    window.cancelAnimationFrame(window.requestAnimationFrame(step));
+                }
+            };
+
+            //start animating
+            window.requestAnimationFrame(step);
+        }
+
+        function loadStatsCounter() {
+            $.ajax({
+                //replace the below API with counter production API 
+               url: "https://eraktkosh.in/Blood_Bank/service/genericCount/TotalCount",
+               // url: "http://10.10.88.16:8180/Blood_Bank/service/genericCount/TotalCount",
+                success: function (data) {
+
+                    //uncomment the next line and comment the second next line if response is not in JSON format
+                    // const counterData = JSON.parse(data);
+                    const counterData = data;
+			console.log(data);
+                    let counter1 = document.getElementById('registeredCamps');
+                    let counter2 = document.getElementById('approvedCamps');
+                    let counter3 = document.getElementById('registeredDonors');
+                    let counter4 = document.getElementById('donorsParticipated');
+                    let counter5 = document.getElementById('donorsDonated');
+                    let timer = document.getElementById('statsTime');
+                   //mbbd2
+                    let counter6 = document.getElementById('registeredDonorsAll');
+                    let counter7 = document.getElementById('donorsDonatedAll');
+                    let timerAll = document.getElementById('statsTimeAll');
+
+                 
+                    animate(counter1, 0, counterData.registeredCamps, 3000);
+                    animate(counter2, 0, counterData.approvedCamps, 3000);
+                    animate(counter3, 0, counterData.registeredDonors, 3000);
+                    animate(counter4, 0, counterData.donorsParticipated, 3000);
+                    animate(counter5, 0, counterData.donorsDonated, 3000);
+                    timer.innerHTML = counterData.timeStamp;
+
+                      //mbbd2
+                    animate(counter6, 0, counterData.registeredDonorsAll, 3000);
+                    animate(counter7, 0, counterData.donorsDonatedAll, 3000);
+                    timerAll.innerHTML = counterData.timeStamp;
+
+                },
+                error: function (data) {
+			console.log(data);
+			//alert(data);
+                    let counter1 = document.getElementById('registeredCamps');
+                    let counter2 = document.getElementById('approvedCamps');
+                    let counter3 = document.getElementById('registeredDonors');
+                    let counter4 = document.getElementById('donorsParticipated');
+                    let counter5 = document.getElementById('donorsDonated');
+                    let timer = document.getElementById('statsTime');
+                    //mbbd2
+                    let counter6 = document.getElementById('registeredDonorsAll');
+                    let counter7 = document.getElementById('donorsDonatedAll');
+                    let timerAll = document.getElementById('statsTimeAll');
+
+                    animate(counter1, 0, 0, 3000);
+                    animate(counter2, 0, 0, 3000);
+                    animate(counter3, 0, 0, 3000);
+                    animate(counter4, 0, 0, 3000);
+                    animate(counter5, 0, 0, 3000);
+                    //mbbd2
+                     animate(counter6, 0, 0, 3000);
+                    animate(counter7, 0, 0, 3000);
+                    timer.innerHTML = '-/-/- --:-- AM/PM';
+
+                }
+            });
+        }
+
+        function loadStatsChart() {
+
+            var options = {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        stacked: false,
+                        position: 'top',
+                        grid: {
+                            display: true,
+                            color: "rgba(255,99,132,0.2)"
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            };
+
+            function formatData(d) {
+                var states = [];
+                var donations = [];
+                var certificates = [];
+                for (let i = 0; i < d.length; i++) {
+                    states.push(d[i].stateName);
+                    donations.push(d[i].donations);
+                    certificates.push(d[i].certificates);
+                }
+                var tableData = { "states": states, "donations": donations, "certificates": certificates }
+                return tableData;
+            }
+
+            $.ajax({
+                //replace the below API with charts production API 
+                url: "https://run.mocky.io/v3/88438f50-bd1d-4f50-a174-d6a8d8900f5d",
+                success: function (data) {
+
+                    //uncomment the next line and comment the second next line if response is not in JSON format
+                    // const JSONstats = JSON.parse(data);
+                    const JSONstats = data;
+                    var stats = formatData(JSONstats.data);
+
+                    var tableData = {
+                        labels: stats.states,
+                        datasets: [
+                            {
+                                label: "Donations",
+                                backgroundColor: "rgba(255,99,132,0.2)",
+                                borderColor: "rgba(255,99,132,1)",
+                                borderWidth: 2,
+                                hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                                hoverBorderColor: "rgba(255,99,132,1)",
+                                data: stats.donations
+                            },
+                            {
+                                label: "Certificates",
+                                backgroundColor: "rgba(155,29,32,0.2)",
+                                borderColor: "rgba(155,29,32,1)",
+                                borderWidth: 2,
+                                hoverBackgroundColor: "rgba(155,29,32,0.4)",
+                                hoverBorderColor: "rgba(155,29,32,1)",
+                                data: stats.certificates
+                            }
+                        ]
+                    }
+
+                    new Chart('chart', {
+                        type: 'bar',
+                        options: options,
+                        data: tableData
+                    });
+                },
+                error: function (data) { }
+            })
+
+        }
+
+        function loadStatsTable() {
+
+            function format(d) {
+
+                // `d` is the original data object for the row
+                var district = d.districtDetails;
+                var htmlElement = '<table style="margin-left:8vw;"><thead><tr><th>District</th><th>Camps</th><th>Donations</th><th>Certificates</th></tr></thead>';
+                for (var i = 0; i < district.length; i++) {
+                    htmlElement += '<tr><td>' + district[i].districtName + '</td><td>' + district[i].camps + '</td><td>' + district[i].donations + '</td><td>' + district[i].certificates + '</td></tr>';
+                }
+                htmlElement += '</table>';
+                return htmlElement;
+
+            }
+
+            $('#stats-table').dataTable().fnDestroy();
+            var table = $('#stats-table').DataTable({
+                //replace the below API with table production API 
+                ajax: 'https://run.mocky.io/v3/4a1067cb-2024-4a77-8f1e-bbc5dec2c561',
+                async: false,
+                columns: [
+                    {
+                        className: 'dt-control',
+                        orderable: false,
+                        data: null,
+                        defaultContent: '',
+                    },
+                    { data: 'stateName' },
+                    { data: 'camps' },
+                    { data: 'donations' },
+                    { data: 'certificates' },
+                ],
+                order: [[1, 'asc']],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        text: 'Save as Excel File',
+                        exportOptions: {
+                            modifier: {
+                                page: 'all'
+                            }
+                        }
+                    }
+                ]
+            });
+
+            // Add event listener for opening and closing details
+            $('#stats-table tbody').on('click', 'td.dt-control', function () {
+                var tr = $(this).closest('tr');
+                var row = table.row(tr);
+
+                if (row.child.isShown()) {
+                    // This row is already open - close it
+                    row.child.hide();
+                    tr.removeClass('shown');
+                } else {
+                    // Open this row
+                    row.child(format(row.data())).show();
+                    tr.addClass('shown');
+                }
+            });
+
+        }
+
+        $(window).on('load', function () {
+
+            //Initial Load of API
+            loadStatsCounter();
+            loadStatsChart();
+            loadStatsTable();
+            //set refresh time of the counter APIs. Uncomment the functions to enable
+            setInterval(function () {
+                 loadStatsCounter();
+                 loadStatsChart();
+                 loadStatsTable(); 
+            }, 300000);
+        });
+    </script>
+    <!--                   code by deepak 20-may-2016 end -->
+    <input type='hidden' id='lon' />
+    <input type='hidden' id='lat' />
+  </div>
+</body>
+
+</html>

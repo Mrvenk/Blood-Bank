@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Blood Banks in Karnataka</title>
+   
+</head>
+<body>
+
+    <style>
+   select{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+        label{
+            font-size: xx-large;
+        }
+        body{
+            background-color: bisque;
+            background-image:url(images/world.png) ;
+            background-size: cover;
+
+        }
+        input{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+        button{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+
+
+
+
+
+
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: #3498db;
+}
+
+#district-select {
+    margin-bottom: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    border-style:groove;
+
+   
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    
+}
+
+th {
+    background-color: #f2f2f2;
+
+}
+
+tr{
+    background-color:pink;
+    
+    
+}
+tr:hover {
+  
+    border-style:dashed;
+    
+background-color:grey;
+   color: azure;
+   border-color: black;
+   
+}
+
+
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:pink;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+
+.sidenav a {
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color:black;
+    display: block;
+    transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+    background-color:beige;
+}
+body{
+    background-color: wheat;
+}
+
+    </style>
+
+
+<span style="font-size:30px;cursor:pointer;  position: absolute; top: 0%; right: 1250px;" onmouseover="openNav()">&#9776;</span>
+
+  
+<div id="mySidenav" class="sidenav"  onmouseleave="closeNav()">
+    <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+    <a href="homey.html">HOME</a>
+    <a href="Donate.html">DONATE</a>
+    <a href="Blood Stock.html">BLOOD STOCK</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<script>
+  
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100px";
+        document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+    }
+
+   
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementsByClassName("content")[0].style.marginLeft= "0";
+    }
+</script>
+
+
+
+    <h1>Nearby Blood Banks in Karnataka</h1><img src="images/pin.png" alt="">
+    
+    <div id="district-select">
+        <label for="district">Select a District:</label>
+        <select id="district">
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mysore">Mysore</option>
+            <option value="bellary">bellary</option>
+            <option value="Shimoga">Shimoga</option>
+            <option value="Vijayanagara">Vijayanagara</option>
+            <option value="Mandya">Mandya</option>
+            <option value="Koppal">Koppal</option>
+        
+        </select>
+        <button id="search-button">Search</button>
+    </div>
+    
+    <div id="table-container"></div>
+
+    <script >
+        document.addEventListener("DOMContentLoaded", () => {
+    
+    const bloodBanksData = [
+        { district: "Bangalore", name: "	Apollo Hospitals Enterprises Ltd Blood Centre", address: "No.01,Old No.28, Plat Form Road,Near Mantri Mall,  Bangalore, Dist. Bangalore Urban" ,distance:"-km"},
+        { district: "Bangalore	", name: "Anekal (BSU)", address: "	Bangalore, , Dist. Bangalore Urban",distance:"-km" },
+        { district: "Bangalore", name: "	Bgs Global Hospitals", address: "	No. 67, Uttarahalli Road, Kengeri, Bangalore, Dist. Bangalore Rural",distance:"-km" },
+        { district: "Bangalore", name: "	Government Hospital Blood storage centre (BSU)", address: "Government Hospital Blood storage centre Devanhalli Bangalore, , Dist. Bangalore Rural",distance:"-km"  },
+        { district: "Shimoga", name: "	Indian Red Cross Society Blood Centre, Shimoga", address: "Ist Floor, Kshiti Complex JPN Road, Shimoga, Dist. Shimoga" ,distance:"5km" },
+        { district: "Shimoga", name: "Hosanagara (BSU)", address: "	Dist. Shimoga",distance:"7km"  },
+        { district: "Shimoga", name: "ASHAJYOTHI VOLUNTARY BLOOD CENTRE", address: "1st Floor, Nandi Samudaya Bhavan, Sowlanga Road, Shivamogga, Shimoga, Dist. Shimoga" ,distance:"5km" },
+        { district: "Shimoga", name: "	Maax blood storage centre BSU", address: "RMR road, Park extension, Shimoga, Dist. Shimoga" ,distance:"8km" },
+        { district: "Mysore", name: "Cauvery Hospital blood Bank", address: "	CauvryHospital Blood Bank, No 42/2B.2C, Teresian Circle, siddarthanagar, Mysore, Dist. Mysore" ,distance:"-km" },
+        { district: "Mysore", name: "GENERALHOSPITAL PERIYAPATNA BLOOD STORAGE UNIT", address: "TALUK GENERAL HOSPITAL PERIYAPATNA, PERIYAPATNA, Dist. Mysore" ,distance:"-km" },
+        { district: "bellary", name: "	CHIRANJEEVI BLOOD BANK.", address: "	near Vijayanagara Colony, 100 Bed Hospital Road, Amaravathi, Bellary, Dist. Ballari",distance:"-km"  },
+        { district: "bellary", name: "	District Hospital Blood Bank, Bellary (BSU)", address: "Blood storage center, District Hospital, Anantapur road, Indira circle, ward no 18, Bellary, Bellary, Dist. Ballari" ,distance:"-km" },
+        { district: "bellary", name: "Jindal Sanjeevani Multi Speciality Hospital Blood Centre", address: "Vijay Vittal Nagar, Toranagallu, Sandur (Taluk), Bellari (District), Karnataka, Toranagallu, Dist. Ballari" ,distance:"-km" },
+        { district: "Mandya", name: "	Adichunchanagiri Hospital And Research Centre", address: "Balagangadharanatha Nagar,Nagamangala Taluk, Bellur, Mandya, Bellur, Dist. Mandya",distance:"-km"  },
+    ];
+
+    const districtSelect = document.getElementById("district");
+    const searchButton = document.getElementById("search-button");
+    const tableContainer = document.getElementById("table-container");
+
+    function generateTable(selectedDistrict) {
+        const districtBloodBanks = bloodBanksData.filter((bank) => bank.district === selectedDistrict);
+
+        if (districtBloodBanks.length === 0) {
+            tableContainer.innerHTML = "<p>No blood banks found for the selected district.</p>";
+            return;
+        }
+
+        const table = document.createElement("table");
+        table.innerHTML = `
+            <caption>${selectedDistrict} Blood Banks</caption>
+            <thead>
+                <tr>
+                    <th> Blood Bank Name</th>
+                    <th>Address</th>
+                    <th>Distance</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${districtBloodBanks.map((bank) => `
+                    <tr>
+                        <td>${bank.name}</td>
+                        <td>${bank.address}</td>
+                        <td>${bank.distance}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        `;
+
+        tableContainer.innerHTML = ""; 
+        tableContainer.appendChild(table);
+    }
+
+    searchButton.addEventListener("click", () => {
+        const selectedDistrict = districtSelect.value;
+        generateTable(selectedDistrict);
+    });
+
+    
+    generateTable(districtSelect.value);
+});
+
+    </script>
+</body>
+</html>

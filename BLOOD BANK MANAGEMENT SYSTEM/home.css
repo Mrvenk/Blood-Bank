@@ -1,0 +1,172 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:pink;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+
+.sidenav a {
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color:black;
+    display: block;
+    transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+    background-color:beige;
+}
+
+
+
+h1{
+    text-align:center;
+    top: 0%;
+  
+}
+.doodle1{
+
+    background-color:brown;
+    width: 100px;
+    height: 100px;
+    right: 75%;
+    top: 200px;
+    position: absolute;
+    border-radius: 20px;
+    
+}
+
+.doodle2{
+
+    background-color:dodgerblue;
+    width: 100px;
+    height: 100px;
+    right: 60%;
+    top: 200px;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.doodle3{
+
+    background-color:rgb(205, 169, 86);
+    width: 100px;
+    height: 100px;
+    right: 45%;
+    top: 200px;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.doodle4 {
+
+    background-color:crimson;
+    width: 100px;
+    height: 100px;
+    right: 30%;
+    top: 200px;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.doodle5{
+
+    background-color:pink;
+    width: 100px;
+    height: 100px;
+    right: 15%;
+    top: 200px;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.doodle1{
+
+    transition: transform .9s;
+}
+
+
+
+.doodle1:hover {
+
+    transform: scale(1.15);
+    background-color:grey;
+}
+
+
+.doodle2{
+
+    transition: transform .9s;
+}
+
+
+
+.doodle2:hover {
+
+    transform: scale(1.15);
+    background-color:grey;
+}
+
+
+.doodle3{
+
+    transition: transform .9s;
+}
+
+
+
+.doodle3:hover {
+
+    transform: scale(1.15);
+    background-color:grey;
+}
+
+.doodle4{
+
+    transition: transform .9s;
+}
+
+
+
+.doodle4:hover {
+
+    transform: scale(1.15);
+    background-color:grey;
+}
+
+.doodle5{
+
+    transition: transform .9s;
+}
+
+
+
+.doodle5:hover {
+
+    transform: scale(1.15);
+    background-color:grey;
+}
+
+h5,a{
+
+    color: aliceblue;
+    text-decoration: none;
+    
+}
+

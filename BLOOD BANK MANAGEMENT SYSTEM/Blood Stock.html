@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrieve Blood Type</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <span style="font-size:30px;cursor:pointer  " onmouseover="openNav()">&#9776;</span>
+
+  
+    <div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
+        <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+        <a href="homey.html">HOME</a>
+        <a href="Donate.html">DONATE</a>
+        <a href="Blood Stock.html">BLOOD STOCK</a>
+        <a href="about.html">ABOUT</a>
+    </div>
+ 
+    <script>
+      
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100px";
+            document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+        }
+
+       
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementsByClassName("content")[0].style.marginLeft= "0";
+        }
+    </script>
+    
+    <h1>BLOOD DONOR'S AVAILABILITY</h1>
+    <form action="Blood Stock.php" method="post">
+        <BR><BR></BR></BR>
+       <CENter>
+        <label for="blood-type">Blood Type:</label>
+        <select id="bloodtype" name="bloodtype" required>
+             <option value="B positive">B+</option>
+             <option value="B negative">B-</option>
+             <option value="O positive">O+</option>
+             <option value="O negative">O-</option>
+             <option value="A positive">A+</option>
+             <option value="A negative">A-</option>
+             <option value="AB positive">AB+</option>
+             <option value="AB negative">AB-</option>
+         </select>
+        <button type="submit"></button>
+       </CENter>
+    </form>
+    <style>
+        select{
+            width: 100px;
+            color: crimson;
+            height: 30px;
+        }
+        label{
+            font-size: x-large;
+        }
+        body{
+            background-color: bisque;
+        }
+        button{
+           
+           
+            height: 30px;
+            background-image: url(images/search.png);
+            background-size: cover;
+            width: 50px;
+            height: 48px;
+            
+        }
+        .blood{
+            background-image: url(images/bloody.png);
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+        }
+    </style>
+    <div class="blood">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOD BANK</title>
+    <link rel="icon" href="images/ICON2.png">
+    <link rel="stylesheet" href="home.css">
+    
+   
+</head>
+<body>
+    
+    <div style="background-image: url(images/BG1.jpg); height: 569px; width:1210px; right: 30px; position: absolute; top: 10px;">
+    <span style="font-size:30px;cursor:pointer" onmouseover="openNav()">&#9776;</span>
+
+  
+    <div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
+        <a href="#" class="closebtn" onclick="closeNav()"><h1>&times;</h1></a>
+        <a href="" onclick="hot()">HOME</a>
+        <a href="" onclick="hot()">DONATE</a>
+        <a href="" onclick="hot()">BLOOD STOCK</a>
+        <a href="" onclick="hot()">ABOUT</a>
+    </div>
+ 
+    <script>
+      
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100px";
+            document.getElementsByClassName("content")[0].style.marginLeft = "0px";
+        }
+
+       
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementsByClassName("content")[0].style.marginLeft= "0";
+        }
+    </script>
+    
+  
+
+    <div class="content">
+       
+        <center> <h1>Blood Bank</h1></center>
+        
+ 
+        <div class="doodle1">
+                <BR></BR>
+           <CENter>
+           <a href="" onclick="hot()"> <h5>BLOOD AVAILABILITY</h5></a>
+           </CENter>
+ 
+        </div>
+ 
+        <div class="doodle2">
+            <BR></BR>
+            <CENter>
+             <a href="" onclick="hot()"><h5>BLOOD COLLECTION</h5></a>
+            </CENter>
+        </div>
+ 
+        <div class="doodle3">
+            <BR></BR>
+            <CENter>
+             <a href="" onclick="hot()"><h5>NEAR BY BLOOD BANKS</h5></a>
+             
+            </CENter>
+        </div>
+ 
+        <div class="doodle4">
+            <BR></BR>
+            <CENter>
+            <a href="" onclick="hot()"> <h5>DONAR </h5>
+                <h5>LOGIN </h5></a>
+            </CENter>
+ 
+        </div>
+ 
+        <div class="doodle5">
+            <BR></BR>
+            <CENter>
+            <a href="LOGIN.html"> <h5>USER LOGIN</h5></a>
+            </CENter>
+ 
+        </div>
+  
+        
+    </div>
+
+    </div>
+    <script>
+        function hot(){
+    alert("please login for save the life!");
+}
+    </script>
+  
+</body>
+</html>
